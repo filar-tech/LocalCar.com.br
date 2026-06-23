@@ -54,8 +54,8 @@ export default function Hero() {
           position: absolute;
           bottom: 0; left: 0; right: 0;
           height: 55%;
-          background-image: linear-gradient(rgba(46,155,255,0.07) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(46,155,255,0.07) 1px, transparent 1px);
+          background-image: linear-gradient(rgba(255,184,0,0.07) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,184,0,0.07) 1px, transparent 1px);
           background-size: 50px 50px;
           transform: perspective(400px) rotateX(60deg);
           transform-origin: bottom;
@@ -73,13 +73,13 @@ export default function Hero() {
           opacity: 0.5;
           pointer-events: none;
         }
-        .radar-ring { position: absolute; inset: 0; border: 1px solid rgba(46,155,255,0.12); border-radius: 50%; }
-        .radar-ring:nth-child(2) { inset: 22%; border-color: rgba(46,155,255,0.16); }
-        .radar-ring:nth-child(3) { inset: 44%; border-color: rgba(46,155,255,0.2); }
-        .radar-ring:nth-child(4) { inset: 66%; border-color: rgba(46,155,255,0.26); }
+        .radar-ring { position: absolute; inset: 0; border: 1px solid rgba(255,184,0,0.12); border-radius: 50%; }
+        .radar-ring:nth-child(2) { inset: 22%; border-color: rgba(255,184,0,0.16); }
+        .radar-ring:nth-child(3) { inset: 44%; border-color: rgba(255,184,0,0.2); }
+        .radar-ring:nth-child(4) { inset: 66%; border-color: rgba(255,184,0,0.26); }
         .radar-sweep {
           position: absolute; inset: 0; border-radius: 50%;
-          background: conic-gradient(from 0deg, transparent 0deg, transparent 300deg, rgba(46,155,255,0.35) 360deg);
+          background: conic-gradient(from 0deg, transparent 0deg, transparent 300deg, rgba(255,184,0,0.3) 360deg);
           animation: sweep 4s linear infinite;
         }
         @keyframes sweep { to { transform: rotate(360deg); } }
@@ -91,7 +91,7 @@ export default function Hero() {
         .hero-inner { position: relative; z-index: 3; max-width: 780px; padding-top: 60px; padding-bottom: 60px; }
         .hero-badge {
           display: inline-flex; align-items: center; gap: 10px;
-          background: rgba(255,42,32,0.08); border: 1px solid rgba(255,42,32,0.3);
+          background: rgba(255,184,0,0.1); border: 1px solid rgba(255,184,0,0.35);
           color: var(--red); font-weight: 600; font-size: 12px; letter-spacing: 2px;
           text-transform: uppercase; padding: 8px 18px; border-radius: 50px; margin-bottom: 30px;
           animation: fadeUp 0.8s ease both;

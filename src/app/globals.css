@@ -4,12 +4,12 @@
   --panel: #0E1117;
   --panel2: #141821;
   --line: rgba(255, 255, 255, 0.08);
-  --red: #FF2A20;
-  --red-glow: rgba(255, 42, 32, 0.5);
+  --red: #FFB800;
+  --red-glow: rgba(255, 184, 0, 0.5);
   --blue: #2E9BFF;
   --blue-glow: rgba(46, 155, 255, 0.45);
-  --yellow: #FFC824;
-  --yellow-glow: rgba(255, 200, 36, 0.45);
+  --yellow: #FF7A00;
+  --yellow-glow: rgba(255, 122, 0, 0.45);
   --white: #FFFFFF;
   --mute: #8A93A6;
   --mute2: #5A6377;
@@ -127,7 +127,7 @@ section {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--red), #C71810);
+  background: linear-gradient(135deg, var(--red), #CC8C00);
   color: #fff;
   box-shadow: 0 0 30px var(--red-glow);
   position: relative;

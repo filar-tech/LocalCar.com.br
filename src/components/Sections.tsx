@@ -44,15 +44,15 @@ export function Features() {
       </div>
       <style>{`
         .features { padding: 110px 0; position: relative; }
-        .features::before { content: ''; position: absolute; top: 10%; left: -10%; width: 500px; height: 500px; background: radial-gradient(circle, var(--blue-glow), transparent 70%); opacity: 0.15; filter: blur(60px); }
+        .features::before { content: ''; position: absolute; top: 10%; left: -10%; width: 500px; height: 500px; background: radial-gradient(circle, var(--red-glow), transparent 70%); opacity: 0.15; filter: blur(60px); }
         .feat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; position: relative; }
         .feat-card { background: linear-gradient(160deg, var(--panel), var(--black2)); border: 1px solid var(--line); border-radius: 18px; padding: 34px 30px; position: relative; overflow: hidden; transition: all 0.4s; }
         .feat-card:hover { transform: translateY(-8px); border-color: rgba(255,255,255,0.15); box-shadow: 0 20px 50px rgba(0,0,0,0.6); }
         .feat-glow { position: absolute; top: -40px; right: -40px; width: 120px; height: 120px; border-radius: 50%; opacity: 0; transition: 0.4s; filter: blur(30px); }
         .feat-card:hover .feat-glow { opacity: 0.4; }
-        .feat-icon { width: 58px; height: 58px; border-radius: 14px; background: rgba(46,155,255,0.1); border: 1px solid rgba(46,155,255,0.2); display: flex; align-items: center; justify-content: center; margin-bottom: 22px; transition: 0.4s; }
-        .feat-card:hover .feat-icon { background: rgba(255,42,32,0.12); border-color: rgba(255,42,32,0.3); }
-        .feat-icon :global(svg) { width: 28px; height: 28px; stroke: var(--blue); transition: 0.4s; }
+        .feat-icon { width: 58px; height: 58px; border-radius: 14px; background: rgba(255,184,0,0.1); border: 1px solid rgba(255,184,0,0.25); display: flex; align-items: center; justify-content: center; margin-bottom: 22px; transition: 0.4s; }
+        .feat-card:hover .feat-icon { background: rgba(255,184,0,0.18); border-color: rgba(255,184,0,0.4); }
+        .feat-icon :global(svg) { width: 28px; height: 28px; stroke: var(--red); transition: 0.4s; }
         .feat-card:hover .feat-icon :global(svg) { stroke: var(--red); }
         .feat-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 10px; }
         .feat-card p { color: var(--mute); font-size: 14.5px; }
@@ -107,18 +107,18 @@ export function HowItWorks() {
         .how-list { margin-top: 40px; }
         .how-list li { display: flex; gap: 20px; margin-bottom: 28px; align-items: flex-start; position: relative; }
         .how-list li:not(:last-child)::after { content: ''; position: absolute; left: 23px; top: 50px; width: 1px; height: calc(100% - 10px); background: linear-gradient(var(--line), transparent); }
-        .how-num { flex-shrink: 0; width: 48px; height: 48px; border-radius: 12px; background: linear-gradient(135deg, var(--red), #c71810); color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'Chakra Petch', sans-serif; font-weight: 700; font-size: 20px; box-shadow: 0 0 24px var(--red-glow); }
+        .how-num { flex-shrink: 0; width: 48px; height: 48px; border-radius: 12px; background: linear-gradient(135deg, var(--red), #CC8C00); color: #111; display: flex; align-items: center; justify-content: center; font-family: 'Chakra Petch', sans-serif; font-weight: 700; font-size: 20px; box-shadow: 0 0 24px var(--red-glow); }
         .how-list h4 { font-size: 19px; font-weight: 700; margin-bottom: 4px; }
         .how-list p { color: var(--mute); font-size: 14.5px; }
         .dash { background: linear-gradient(160deg, var(--panel), var(--black)); border: 1px solid var(--line); border-radius: 22px; padding: 22px; position: relative; overflow: hidden; box-shadow: 0 30px 80px rgba(0,0,0,0.6); }
-        .dash-glow { position: absolute; top: -80px; right: -80px; width: 260px; height: 260px; background: radial-gradient(circle, var(--blue-glow), transparent 70%); opacity: 0.3; filter: blur(50px); }
+        .dash-glow { position: absolute; top: -80px; right: -80px; width: 260px; height: 260px; background: radial-gradient(circle, var(--red-glow), transparent 70%); opacity: 0.3; filter: blur(50px); }
         .dash-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; position: relative; }
         .dash-title { font-family: 'Chakra Petch', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 1px; display: flex; align-items: center; gap: 8px; }
         .dash-live { width: 7px; height: 7px; background: #22e07a; border-radius: 50%; box-shadow: 0 0 10px #22e07a; animation: pulse 2s infinite; }
         .dash-dots { display: flex; gap: 6px; }
         .dash-dots span { width: 9px; height: 9px; border-radius: 50%; }
         .dash-map { height: 240px; border-radius: 14px; position: relative; overflow: hidden; background: linear-gradient(135deg, #0a1828, #0d2138); border: 1px solid var(--line); margin-bottom: 16px; }
-        .dash-map::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(46,155,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(46,155,255,0.1) 1px, transparent 1px); background-size: 26px 26px; }
+        .dash-map::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,184,0,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,184,0,0.08) 1px, transparent 1px); background-size: 26px 26px; }
         .dmap-route { position: absolute; inset: 0; width: 100%; height: 100%; }
         .dmap-route path { fill: none; stroke: var(--yellow); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 7 9; filter: drop-shadow(0 0 6px var(--yellow-glow)); animation: dash 1.4s linear infinite; }
         @keyframes dash { to { stroke-dashoffset: -32; } }
