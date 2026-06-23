@@ -48,7 +48,7 @@ export default function ContactSection() {
       <style>{`
         .contact { padding: 110px 0; background: var(--black2); }
         .contact-wrap { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--line); border-radius: 26px; overflow: hidden; background: var(--panel); }
-        .contact-info { padding: 56px 48px; position: relative; overflow: hidden; background: linear-gradient(160deg, #0d1420, var(--black)); }
+        .contact-info { padding: 56px 48px; position: relative; overflow: hidden; background: linear-gradient(160deg, #FFF5CC, var(--black)); }
         .contact-info::before { content: ''; position: absolute; bottom: -80px; left: -80px; width: 300px; height: 300px; background: radial-gradient(circle, var(--red-glow), transparent 70%); opacity: 0.2; filter: blur(50px); }
         .contact-info h2 { font-size: 38px; font-weight: 800; line-height: 1.05; margin-bottom: 16px; position: relative; }
         .contact-info > p { color: var(--mute); margin-bottom: 38px; position: relative; }

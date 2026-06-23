@@ -45,11 +45,11 @@ export default function ServicosPage() {
         .serv-list { padding: 30px 0 110px; }
         .serv-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
         .serv-card { background: linear-gradient(160deg, var(--panel), var(--black2)); border: 1px solid var(--line); border-radius: 20px; padding: 38px 32px; position: relative; overflow: hidden; transition: all 0.4s; }
-        .serv-card:hover { transform: translateY(-8px); border-color: rgba(255,255,255,0.15); box-shadow: 0 20px 50px rgba(0,0,0,0.6); }
-        .serv-num { position: absolute; top: 28px; right: 30px; font-family: 'Chakra Petch', sans-serif; font-size: 28px; font-weight: 700; color: rgba(255,255,255,0.06); }
+        .serv-card:hover { transform: translateY(-8px); border-color: rgba(255,184,0,0.4); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+        .serv-num { position: absolute; top: 28px; right: 30px; font-family: 'Chakra Petch', sans-serif; font-size: 28px; font-weight: 700; color: rgba(0,0,0,0.06); }
         .serv-card h3 { font-size: 21px; font-weight: 700; margin-bottom: 12px; max-width: 80%; }
         .serv-card > p { color: var(--mute); font-size: 14.5px; margin-bottom: 22px; }
-        .serv-card li { color: #cfd5e0; font-size: 13.5px; padding: 8px 0; display: flex; gap: 10px; align-items: center; border-bottom: 1px solid var(--line); }
+        .serv-card li { color: var(--mute); font-size: 13.5px; padding: 8px 0; display: flex; gap: 10px; align-items: center; border-bottom: 1px solid var(--line); }
         .serv-card li:last-child { border: none; }
         .serv-card li :global(svg) { width: 15px; height: 15px; stroke: var(--yellow); stroke-width: 3; flex-shrink: 0; }
         @media (max-width: 980px) { .serv-grid { grid-template-columns: 1fr 1fr; } }

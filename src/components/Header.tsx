@@ -105,15 +105,15 @@ export default function Header() {
           left: 0;
           right: 0;
           z-index: 100;
-          background: rgba(5, 6, 8, 0.85);
+          background: rgba(247, 247, 243, 0.88);
           backdrop-filter: blur(20px);
           -webkit-backdrop-filter: blur(20px);
           border-bottom: 1px solid var(--line);
           transition: background 0.3s, box-shadow 0.3s;
         }
         .site-header.scrolled {
-          background: rgba(5, 6, 8, 0.97);
-          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+          background: rgba(247, 247, 243, 0.98);
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
         }
         .nav {
           height: 72px;
@@ -214,7 +214,7 @@ export default function Header() {
             padding: 12px;
             border-radius: 14px;
             border: 1px solid var(--line);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
           }
           .nav-links.open {
             display: flex;

@@ -48,7 +48,7 @@ export default function Hero() {
           display: flex;
           align-items: center;
           overflow: hidden;
-          background: radial-gradient(ellipse 90% 70% at 50% 0%, #0d1420 0%, var(--black) 60%);
+          background: radial-gradient(ellipse 90% 70% at 55% 40%, #FFF5CC 0%, var(--black) 70%);
         }
         .hero-grid {
           position: absolute;
@@ -102,17 +102,17 @@ export default function Hero() {
           letter-spacing: -2px; margin-bottom: 18px; animation: fadeUp 0.8s ease 0.1s both;
         }
         .hero h1 .grad { background: linear-gradient(120deg, var(--red), var(--yellow)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero h1 .glow { color: #fff; text-shadow: 0 0 40px rgba(255,255,255,0.25); }
+        .hero h1 .glow { color: var(--white); }
         .slogan {
           font-family: 'Chakra Petch', sans-serif; font-size: clamp(18px, 2.6vw, 28px);
           font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 26px;
           animation: fadeUp 0.8s ease 0.2s both;
         }
-        .slogan .b { color: var(--blue); } .slogan .r { color: var(--red); } .slogan .w { color: #fff; }
+        .slogan .b { color: var(--blue); } .slogan .r { color: var(--red); } .slogan .w { color: var(--white); }
         .lead { color: var(--mute); font-size: 18px; max-width: 540px; margin-bottom: 38px; animation: fadeUp 0.8s ease 0.3s both; }
         .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; animation: fadeUp 0.8s ease 0.4s both; }
         .hero-stats { display: flex; gap: 48px; margin-top: 54px; animation: fadeUp 0.8s ease 0.5s both; }
-        .hero-stat .num { font-family: 'Chakra Petch', sans-serif; font-size: 42px; font-weight: 700; line-height: 1; background: linear-gradient(120deg, #fff, var(--blue)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-stat .num { font-family: 'Chakra Petch', sans-serif; font-size: 42px; font-weight: 700; line-height: 1; background: linear-gradient(120deg, var(--red), #CC8C00); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
         .hero-stat .lbl { color: var(--mute2); font-size: 13px; margin-top: 6px; letter-spacing: 0.5px; }
         @media (max-width: 980px) { .radar { opacity: 0.25; left: 50%; } }
         @media (max-width: 680px) { .hero-stats { gap: 28px; } }

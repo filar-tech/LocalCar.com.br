@@ -78,15 +78,15 @@ export default function SobrePage() {
         .about-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 56px; align-items: center; margin-bottom: 100px; }
         .about-text h2 { font-size: 32px; font-weight: 800; margin-bottom: 20px; }
         .about-text p { color: var(--mute); font-size: 16px; margin-bottom: 16px; }
-        .about-text strong { color: #fff; }
+        .about-text strong { color: var(--white); }
         .about-card { background: linear-gradient(160deg, var(--panel), var(--black2)); border: 1px solid var(--line); border-radius: 22px; padding: 14px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
         .ac-stat { background: var(--black2); border: 1px solid var(--line); border-radius: 16px; padding: 26px 20px; text-align: center; }
-        .ac-stat .num { font-family: 'Chakra Petch', sans-serif; font-size: 34px; font-weight: 700; background: linear-gradient(120deg, #fff, var(--blue)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .ac-stat .num { font-family: 'Chakra Petch', sans-serif; font-size: 34px; font-weight: 700; background: linear-gradient(120deg, var(--red), #CC8C00); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
         .ac-stat .lbl { color: var(--mute); font-size: 12px; margin-top: 8px; }
         .val-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
         .val-card { background: linear-gradient(160deg, var(--panel), var(--black2)); border: 1px solid var(--line); border-radius: 18px; padding: 32px 26px; transition: all 0.4s; }
-        .val-card:hover { transform: translateY(-6px); border-color: rgba(255,255,255,0.15); }
-        .val-icon { width: 54px; height: 54px; border-radius: 14px; background: rgba(255,42,32,0.1); border: 1px solid rgba(255,42,32,0.25); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+        .val-card:hover { transform: translateY(-6px); border-color: rgba(255,184,0,0.4); box-shadow: 0 8px 24px rgba(0,0,0,0.07); }
+        .val-icon { width: 54px; height: 54px; border-radius: 14px; background: rgba(255,184,0,0.12); border: 1px solid rgba(255,184,0,0.3); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
         .val-icon :global(svg) { width: 26px; height: 26px; stroke: var(--red); stroke-width: 2; }
         .val-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
         .val-card p { color: var(--mute); font-size: 14px; }

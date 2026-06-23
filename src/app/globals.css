@@ -1,18 +1,18 @@
 :root {
-  --black: #050608;
-  --black2: #0A0C10;
-  --panel: #0E1117;
-  --panel2: #141821;
-  --line: rgba(255, 255, 255, 0.08);
+  --black: #F7F7F3;
+  --black2: #EEEEE8;
+  --panel: #FFFFFF;
+  --panel2: #F3F3EE;
+  --line: rgba(0, 0, 0, 0.09);
   --red: #FFB800;
-  --red-glow: rgba(255, 184, 0, 0.5);
-  --blue: #2E9BFF;
-  --blue-glow: rgba(46, 155, 255, 0.45);
-  --yellow: #FF7A00;
-  --yellow-glow: rgba(255, 122, 0, 0.45);
-  --white: #FFFFFF;
-  --mute: #8A93A6;
-  --mute2: #5A6377;
+  --red-glow: rgba(255, 184, 0, 0.35);
+  --blue: #2563EB;
+  --blue-glow: rgba(37, 99, 235, 0.25);
+  --yellow: #FF9800;
+  --yellow-glow: rgba(255, 152, 0, 0.35);
+  --white: #1A1A1A;
+  --mute: #6B7280;
+  --mute2: #9CA3AF;
 }
 
 * {
@@ -59,7 +59,7 @@ body::after {
   inset: 0;
   z-index: 9999;
   pointer-events: none;
-  opacity: 0.035;
+  opacity: 0.018;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
@@ -128,28 +128,28 @@ section {
 
 .btn-primary {
   background: linear-gradient(135deg, var(--red), #CC8C00);
-  color: #fff;
-  box-shadow: 0 0 30px var(--red-glow);
+  color: #111111;
+  box-shadow: 0 4px 20px var(--red-glow);
   position: relative;
   overflow: hidden;
 }
 
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 0 44px var(--red-glow);
+  box-shadow: 0 8px 30px var(--red-glow);
 }
 
 .btn-ghost {
-  background: rgba(255, 255, 255, 0.04);
-  color: #fff;
-  border: 1px solid var(--line);
+  background: rgba(0, 0, 0, 0.04);
+  color: var(--white);
+  border: 1px solid rgba(0, 0, 0, 0.14);
   backdrop-filter: blur(10px);
 }
 
 .btn-ghost:hover {
-  background: rgba(255, 255, 255, 0.09);
+  background: rgba(0, 0, 0, 0.08);
   transform: translateY(-3px);
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(0, 0, 0, 0.22);
 }
 
 @keyframes fadeUp {
@@ -169,7 +169,8 @@ section {
   text-align: center;
   position: relative;
   overflow: hidden;
-  background: radial-gradient(ellipse 80% 60% at 50% 0%, #0d1420 0%, var(--black) 60%);
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, #FFF5CC 0%, var(--black) 65%);
+  border-bottom: 1px solid var(--line);
 }
 
 .page-hero h1 {
