@@ -133,34 +133,48 @@ export default function Header() {
         }
         .nav-links li a {
           display: block;
-          color: var(--mute);
+          color: #555;
           font-weight: 500;
           font-size: 14px;
           letter-spacing: 0.3px;
           padding: 8px 14px;
           border-radius: 8px;
           transition: color 0.2s, background 0.2s;
+          position: relative;
         }
         .nav-links li a:hover {
-          color: var(--white);
-          background: rgba(255, 255, 255, 0.05);
+          color: #1A1A1A;
+          background: rgba(255, 184, 0, 0.08);
         }
         .nav-links li a.active {
-          color: var(--white);
-          background: rgba(255, 255, 255, 0.07);
+          color: #B35F00;
+          font-weight: 700;
+          background: rgba(255, 184, 0, 0.1);
+        }
+        .nav-links li a.active::after {
+          content: '';
+          position: absolute;
+          bottom: 4px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 18px;
+          height: 2px;
+          background: #FFB800;
+          border-radius: 2px;
         }
         .nav-cta {
-          background: linear-gradient(135deg, var(--red), #CC8C00) !important;
-          color: var(--white) !important;
+          background: linear-gradient(135deg, #FFB800, #E07800) !important;
+          color: #111111 !important;
           padding: 10px 22px !important;
           border-radius: 8px;
-          font-weight: 600 !important;
+          font-weight: 700 !important;
           white-space: nowrap;
-          box-shadow: 0 0 20px var(--red-glow);
+          box-shadow: 0 4px 16px rgba(255,184,0,0.35);
           transition: box-shadow 0.25s, transform 0.25s !important;
+          letter-spacing: 0.2px;
         }
         .nav-cta:hover {
-          box-shadow: 0 0 36px var(--red-glow) !important;
+          box-shadow: 0 6px 28px rgba(255,184,0,0.5) !important;
           transform: translateY(-2px);
         }
         /* hamburger */

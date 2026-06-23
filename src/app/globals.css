@@ -127,29 +127,38 @@ section {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--red), #CC8C00);
+  background: linear-gradient(135deg, #FFB800 0%, #E07800 100%);
   color: #111111;
-  box-shadow: 0 4px 20px var(--red-glow);
+  box-shadow: 0 4px 20px rgba(255,184,0,0.35);
   position: relative;
   overflow: hidden;
+  font-weight: 700;
 }
-
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.28), transparent);
+  transition: left 0.5s ease;
+}
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 30px var(--red-glow);
+  box-shadow: 0 10px 36px rgba(255,184,0,0.5);
+}
+.btn-primary:hover::after {
+  left: 150%;
 }
 
 .btn-ghost {
   background: rgba(0, 0, 0, 0.04);
-  color: var(--white);
-  border: 1px solid rgba(0, 0, 0, 0.14);
-  backdrop-filter: blur(10px);
+  color: #1A1A1A;
+  border: 1px solid rgba(0, 0, 0, 0.16);
 }
-
 .btn-ghost:hover {
   background: rgba(0, 0, 0, 0.08);
   transform: translateY(-3px);
-  border-color: rgba(0, 0, 0, 0.22);
+  border-color: rgba(0, 0, 0, 0.28);
 }
 
 @keyframes fadeUp {

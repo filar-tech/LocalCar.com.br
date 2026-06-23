@@ -166,7 +166,7 @@ export function Audience() {
         .audience::before { content: ''; position: absolute; bottom: 0; right: 10%; width: 500px; height: 500px; background: radial-gradient(circle, var(--red-glow), transparent 70%); opacity: 0.1; filter: blur(70px); }
         .aud-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; position: relative; }
         .aud-card { background: linear-gradient(160deg, var(--panel), var(--black2)); border: 1px solid var(--line); border-radius: 22px; padding: 46px 42px; transition: all 0.4s; position: relative; overflow: hidden; }
-        .aud-card:hover { transform: translateY(-6px); border-color: rgba(255,255,255,0.15); }
+        .aud-card:hover { transform: translateY(-6px); border-color: rgba(255,184,0,0.35); box-shadow: 0 12px 32px rgba(0,0,0,0.09); }
         .aud-card .ic { width: 64px; height: 64px; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 26px; }
         .aud-card.own .ic { background: rgba(255,42,32,0.12); border: 1px solid rgba(255,42,32,0.3); }
         .aud-card.fleet .ic { background: rgba(255,200,36,0.12); border: 1px solid rgba(255,200,36,0.3); }
@@ -174,7 +174,7 @@ export function Audience() {
         .aud-card.own .ic :global(svg) { stroke: var(--red); } .aud-card.fleet .ic :global(svg) { stroke: var(--yellow); }
         .aud-card h3 { font-size: 26px; font-weight: 800; margin-bottom: 12px; }
         .aud-card > p { color: var(--mute); font-size: 15px; margin-bottom: 22px; }
-        .aud-card li { color: #cfd5e0; font-size: 14px; padding: 9px 0; display: flex; gap: 12px; align-items: center; border-bottom: 1px solid var(--line); }
+        .aud-card li { color: var(--mute); font-size: 14px; padding: 9px 0; display: flex; gap: 12px; align-items: center; border-bottom: 1px solid var(--line); }
         .aud-card li:last-child { border: none; }
         .aud-card li :global(svg) { width: 16px; height: 16px; stroke-width: 3; flex-shrink: 0; }
         .aud-card.own li :global(svg) { stroke: var(--red); } .aud-card.fleet li :global(svg) { stroke: var(--yellow); }
