@@ -11,7 +11,6 @@ export default function CustomCursor() {
   const raf     = useRef<number>(0);
 
   useEffect(() => {
-    // Desabilita em touch e reduced-motion
     if (window.matchMedia("(hover: none)").matches) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
@@ -28,27 +27,26 @@ export default function CustomCursor() {
     }
 
     function onOver(e: MouseEvent) {
-      if ((e.target as HTMLElement).closest("a, button, [data-hover]")) {
+      if ((e.target as HTMLElement).closest("a, button, input, select, textarea, [data-hover]")) {
         hovered.current = true;
       }
     }
 
     function onOut(e: MouseEvent) {
-      if ((e.target as HTMLElement).closest("a, button, [data-hover]")) {
+      if ((e.target as HTMLElement).closest("a, button, input, select, textarea, [data-hover]")) {
         hovered.current = false;
       }
     }
 
     function tick() {
-      // Dot segue imediatamente
       if (dot) {
         dot.style.left = `${pos.current.x}px`;
         dot.style.top  = `${pos.current.y}px`;
       }
 
       // Ring com easing (lerp)
-      ringPos.current.x += (pos.current.x - ringPos.current.x) * 0.13;
-      ringPos.current.y += (pos.current.y - ringPos.current.y) * 0.13;
+      ringPos.current.x += (pos.current.x - ringPos.current.x) * 0.18;
+      ringPos.current.y += (pos.current.y - ringPos.current.y) * 0.18;
 
       if (ring) {
         ring.style.left   = `${ringPos.current.x}px`;
@@ -58,9 +56,9 @@ export default function CustomCursor() {
         ring.style.height = size;
         ring.style.borderColor = hovered.current
           ? "var(--terra)"
-          : "rgba(196, 90, 40, 0.45)";
+          : "rgba(214, 154, 30, 0.45)";
         ring.style.backgroundColor = hovered.current
-          ? "rgba(196, 90, 40, 0.06)"
+          ? "rgba(214, 154, 30, 0.06)"
           : "transparent";
       }
 
@@ -92,7 +90,6 @@ export default function CustomCursor() {
 
   return (
     <>
-      {/* Ponto central */}
       <div
         ref={dotRef}
         aria-hidden="true"
@@ -103,7 +100,6 @@ export default function CustomCursor() {
           background: "var(--terra)",
         }}
       />
-      {/* Anel com easing */}
       <div
         ref={ringRef}
         aria-hidden="true"
@@ -111,7 +107,7 @@ export default function CustomCursor() {
           ...base,
           width:      "32px",
           height:     "32px",
-          border:     "1.5px solid rgba(196, 90, 40, 0.45)",
+          border:     "1.5px solid rgba(214, 154, 30, 0.45)",
           transition: "width 0.25s ease, height 0.25s ease, border-color 0.25s ease, background-color 0.25s ease, opacity 0.3s",
         }}
       />

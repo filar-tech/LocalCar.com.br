@@ -79,12 +79,12 @@ export default function ContactForm() {
       <p className="form-note">Resposta rápida via WhatsApp</p>
 
       <style jsx>{`
-        .contact-form { padding: 52px 46px; }
+        .contact-form { padding: 54px 46px; }
 
         .contact-form h3 {
           font-family: var(--font-fraunces), serif;
-          font-size: 24px;
-          font-weight: 700;
+          font-size: 26px;
+          font-weight: 600;
           margin-bottom: 6px;
           color: var(--text);
         }
@@ -95,11 +95,11 @@ export default function ContactForm() {
           line-height: 1.6;
         }
 
-        .field { margin-bottom: 16px; }
+        .field { margin-bottom: 17px; }
         .field label {
           display: block;
-          font-size: 11.5px;
-          font-weight: 600;
+          font-size: 12px;
+          font-weight: 500;
           color: var(--mute);
           margin-bottom: 7px;
           letter-spacing: 0.5px;
@@ -110,10 +110,10 @@ export default function ContactForm() {
         .field select,
         .field textarea {
           width: 100%;
-          padding: 13px 15px;
+          padding: 14px 16px;
           background: var(--bg);
-          border: 1.5px solid rgba(42, 32, 24, 0.13);
-          border-radius: 10px;
+          border: 1.5px solid var(--line-soft);
+          border-radius: 12px;
           font-family: var(--font-outfit), sans-serif;
           font-size: 15px;
           color: var(--text);
@@ -127,7 +127,7 @@ export default function ContactForm() {
         .field select:focus,
         .field textarea:focus {
           border-color: var(--terra);
-          box-shadow: 0 0 0 3px rgba(196, 90, 40, 0.10);
+          box-shadow: 0 0 0 3px rgba(214, 154, 30, 0.12);
         }
 
         .field select {
@@ -137,44 +137,43 @@ export default function ContactForm() {
 
         .field textarea {
           resize: vertical;
-          min-height: 90px;
+          min-height: 88px;
         }
 
         .form-btn {
           width: 100%;
-          background: var(--terra);
+          background: linear-gradient(135deg, var(--terra), var(--mustard));
           color: #fff;
           border: none;
-          padding: 15px;
-          border-radius: 10px;
+          padding: 16px;
+          border-radius: 12px;
           font-family: var(--font-outfit), sans-serif;
-          font-weight: 700;
-          font-size: 15.5px;
+          font-weight: 600;
+          font-size: 16px;
           cursor: pointer;
-          transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
+          transition: transform 0.25s, box-shadow 0.25s;
           display: flex;
           align-items: center;
           justify-content: center;
           gap: 10px;
-          box-shadow: 0 4px 16px rgba(196, 90, 40, 0.25);
+          box-shadow: 0 10px 26px rgba(214, 154, 30, 0.3);
           margin-top: 4px;
         }
         .form-btn:hover {
-          background: var(--terra-dark);
           transform: translateY(-2px);
-          box-shadow: 0 8px 24px rgba(196, 90, 40, 0.32);
+          box-shadow: 0 16px 36px rgba(214, 154, 30, 0.42);
         }
         .form-btn :global(svg) { width: 20px; height: 20px; fill: #fff; }
 
         .form-note {
           text-align: center;
-          font-size: 12.5px;
+          font-size: 13px;
           color: var(--mute2);
-          margin-top: 14px;
+          margin-top: 15px;
         }
 
         @media (max-width: 680px) {
-          .contact-form { padding: 36px 24px; }
+          .contact-form { padding: 38px 26px; }
         }
       `}</style>
     </div>

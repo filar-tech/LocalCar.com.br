@@ -9,11 +9,11 @@ import Reveal from "./Reveal";
 export function Marquee() {
   const items = [
     "Localização em tempo real",
-    "Bloqueio remoto do motor",
-    "Cerca virtual inteligente",
+    "Bloqueio remoto",
+    "Cerca virtual",
     "Estatísticas do veículo",
     "Instalação rápida",
-    "App iOS & Android",
+    "App iOS e Android",
   ];
   const all = [...items, ...items];
 
@@ -32,6 +32,8 @@ export function Marquee() {
           background: linear-gradient(135deg, var(--terra), var(--mustard));
           padding: 16px 0;
           overflow: hidden;
+          position: relative;
+          z-index: 2;
         }
         .mq-track {
           display: flex;
@@ -71,7 +73,7 @@ export function Features() {
           <div className="sec-head">
             <span className="sec-tag">Recursos</span>
             <h2 className="sec-title">
-              Controle total <span className="grad">na palma da mão</span>
+              Tudo sob controle, <span className="grad">na palma da mão</span>
             </h2>
             <p className="sec-sub">
               Tecnologia de ponta para você acompanhar e proteger seu veículo de onde estiver.
@@ -106,7 +108,7 @@ export function Features() {
           position: absolute;
           top: 0; right: -5%;
           width: 500px; height: 500px;
-          background: radial-gradient(circle, rgba(196,90,40,0.06), transparent 70%);
+          background: radial-gradient(circle, rgba(214,154,30,0.06), transparent 70%);
           filter: blur(60px);
           pointer-events: none;
         }
@@ -114,21 +116,20 @@ export function Features() {
         .feat-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 20px;
+          gap: 22px;
         }
 
-        /* TiltCard wrapper fills height — feat-card also fills */
         .feat-card {
-          background: var(--panel);
-          border: 1px solid var(--line);
-          border-radius: 18px;
-          padding: 34px 28px;
+          background: var(--paper);
+          border: 1px solid var(--line-soft);
+          border-radius: 20px;
+          padding: 34px 30px;
           position: relative;
           overflow: hidden;
           height: 100%;
-          transition: border-color 0.35s, box-shadow 0.35s;
+          transition: box-shadow 0.3s, transform 0.3s;
+          transform-style: preserve-3d;
         }
-        /* Linha gradiente que aparece no topo ao hover */
         .feat-card::after {
           content: '';
           position: absolute;
@@ -140,43 +141,48 @@ export function Features() {
           transition: transform 0.35s;
         }
         .feat-card:hover {
-          border-color: rgba(196,90,40,0.30);
-          box-shadow: 0 10px 30px rgba(42,32,24,0.08);
+          box-shadow: 0 24px 50px var(--shadow);
         }
         .feat-card:hover::after { transform: scaleX(1); }
 
         .feat-num {
           position: absolute;
-          top: 22px; right: 26px;
+          top: 24px; right: 28px;
           font-family: var(--font-fraunces), serif;
-          font-size: 13px;
-          font-weight: 600;
-          color: var(--amber-soft);
-          letter-spacing: 1px;
+          font-size: 34px;
+          font-weight: 700;
+          color: rgba(196,90,40,0.10);
+          line-height: 1;
         }
 
         .feat-icon {
-          width: 54px; height: 54px;
-          border-radius: 14px;
-          background: rgba(196,90,40,0.08);
-          border: 1px solid rgba(196,90,40,0.18);
+          width: 58px; height: 58px;
+          border-radius: 16px;
+          background: linear-gradient(135deg, rgba(232,185,46,0.18), rgba(214,154,30,0.14));
           display: flex;
           align-items: center;
           justify-content: center;
-          margin-bottom: 20px;
-          transition: background 0.3s, border-color 0.3s;
+          margin-bottom: 22px;
+          transition: transform 0.3s;
         }
         .feat-card:hover .feat-icon {
-          background: rgba(196,90,40,0.14);
-          border-color: rgba(196,90,40,0.30);
+          transform: scale(1.08) rotate(-4deg);
         }
         .feat-icon :global(svg) {
-          width: 26px; height: 26px;
-          stroke: var(--terra);
+          width: 28px; height: 28px;
+          stroke: var(--terra-dark);
+          fill: none;
+          stroke-width: 2;
         }
 
-        .feat-card h3 { font-family: var(--font-fraunces), serif; font-size: 19px; font-weight: 700; margin-bottom: 10px; color: var(--text); }
-        .feat-card p  { color: var(--mute); font-size: 14px; line-height: 1.7; }
+        .feat-card h3 {
+          font-family: var(--font-fraunces), serif;
+          font-size: 21px;
+          font-weight: 600;
+          margin-bottom: 9px;
+          color: var(--text);
+        }
+        .feat-card p { color: var(--mute); font-size: 14.5px; line-height: 1.7; }
 
         @media (max-width: 980px) { .feat-grid { grid-template-columns: 1fr 1fr; } }
         @media (max-width: 680px) { .feat-grid { grid-template-columns: 1fr; } }
@@ -197,65 +203,56 @@ export function HowItWorks() {
           <Reveal>
             <div>
               <span className="sec-tag">Como funciona</span>
-              <h2 className="sec-title" style={{ textAlign: "left", marginBottom: 14 }}>
-                Do início ao <span className="grad">controle total</span>
+              <h2 className="sec-title" style={{ textAlign: "left", marginBottom: 12 }}>
+                Do início <span className="grad">ao controle total</span>
               </h2>
-              <p className="sec-sub" style={{ textAlign: "left" }}>
+              <p className="sec-sub" style={{ textAlign: "left", marginTop: 12 }}>
                 Em poucos passos seu veículo está protegido e monitorado 24 horas.
               </p>
 
-              <ul className="how-list">
-                {comoFunciona.map((p, i) => (
-                  <li key={p.n}>
+              <div className="how-list">
+                {comoFunciona.map((p) => (
+                  <div key={p.n} className="how-item">
                     <div className="how-num" aria-label={`Passo ${p.n}`}>{p.n}</div>
                     <div>
                       <h4>{p.titulo}</h4>
                       <p>{p.desc}</p>
                     </div>
-                  </li>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
           </Reveal>
 
-          {/* Dashboard mockup */}
+          {/* Ring card */}
           <Reveal delay={120}>
-            <div className="dash" aria-hidden="true">
-              <div className="dash-glow" />
-              <div className="dash-top">
-                <div className="dash-title">
-                  <span className="dash-live" />
-                  LocalCar · Painel ao vivo
+            <div className="how-visual">
+              <TiltCard className="how-card" maxDeg={9} style={{ height: "auto" }}>
+                <div className="hc-ring" aria-label="24 horas monitorado">
+                  <div className="hc-ring-val">
+                    24h
+                    <small>monitorado</small>
+                  </div>
                 </div>
-                <div className="dash-dots">
-                  <span style={{ background: "#FF5F57" }} />
-                  <span style={{ background: "#FFBB2C" }} />
-                  <span style={{ background: "#27C93F" }} />
+                <div className="hc-stats">
+                  <div className="hc-stat">
+                    <div className="v">47 km</div>
+                    <div className="l">Percorrido hoje</div>
+                  </div>
+                  <div className="hc-stat">
+                    <div className="v">62 km/h</div>
+                    <div className="l">Velocidade atual</div>
+                  </div>
+                  <div className="hc-stat">
+                    <div className="v">Ativa</div>
+                    <div className="l">Cerca virtual</div>
+                  </div>
+                  <div className="hc-stat">
+                    <div className="v">0</div>
+                    <div className="l">Alertas hoje</div>
+                  </div>
                 </div>
-              </div>
-
-              <div className="dash-map">
-                <svg viewBox="0 0 400 240" preserveAspectRatio="none">
-                  <path d="M70 150 Q 160 60 220 120 T 330 60" />
-                </svg>
-                <span className="dmap-pin s" />
-                <span className="dmap-pin e" />
-              </div>
-
-              <div className="dash-stats">
-                <div className="dstat">
-                  <div className="l">STATUS</div>
-                  <div className="v on">● Ativo</div>
-                </div>
-                <div className="dstat">
-                  <div className="l">VELOCIDADE</div>
-                  <div className="v amber">62 <span style={{ fontSize: 11 }}>km/h</span></div>
-                </div>
-                <div className="dstat">
-                  <div className="l">PERCORRIDO</div>
-                  <div className="v terra">47 <span style={{ fontSize: 11 }}>km</span></div>
-                </div>
-              </div>
+              </TiltCard>
             </div>
           </Reveal>
         </div>
@@ -272,148 +269,126 @@ export function HowItWorks() {
         .how-grid {
           display: grid;
           grid-template-columns: 1fr 1fr;
-          gap: 70px;
+          gap: 64px;
           align-items: center;
         }
 
         .how-list { margin-top: 36px; }
-        .how-list li {
+        .how-item {
           display: flex;
-          gap: 18px;
-          margin-bottom: 26px;
-          align-items: flex-start;
+          gap: 20px;
+          margin-bottom: 14px;
+          padding: 18px;
+          border-radius: 16px;
+          transition: background 0.3s, box-shadow 0.3s;
           position: relative;
         }
-        .how-list li:not(:last-child)::after {
-          content: '';
-          position: absolute;
-          left: 22px; top: 50px;
-          width: 1px;
-          height: calc(100% - 10px);
-          background: linear-gradient(var(--line), transparent);
+        .how-item:hover {
+          background: var(--paper);
+          box-shadow: 0 14px 34px var(--shadow);
         }
 
         .how-num {
           flex-shrink: 0;
           width: 46px; height: 46px;
-          border-radius: 12px;
-          background: var(--terra);
+          border-radius: 13px;
+          background: linear-gradient(135deg, var(--terra), var(--mustard));
           color: #fff;
           display: flex;
           align-items: center;
           justify-content: center;
           font-family: var(--font-fraunces), serif;
           font-weight: 700;
-          font-size: 18px;
+          font-size: 19px;
+          box-shadow: 0 8px 20px rgba(196,90,40,0.3);
         }
 
-        .how-list h4 { font-family: var(--font-fraunces), serif; font-size: 18px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
-        .how-list p  { color: var(--mute); font-size: 14px; line-height: 1.7; }
-
-        /* Dashboard */
-        .dash {
-          background: var(--panel);
-          border: 1px solid var(--line);
-          border-radius: 22px;
-          padding: 20px;
-          position: relative;
-          overflow: hidden;
-          box-shadow: 0 12px 40px rgba(42,32,24,0.09);
-        }
-        .dash-glow {
-          position: absolute;
-          top: -70px; right: -70px;
-          width: 240px; height: 240px;
-          background: radial-gradient(circle, rgba(196,90,40,0.09), transparent 70%);
-          filter: blur(40px);
-        }
-
-        .dash-top {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          margin-bottom: 16px;
-          position: relative;
-        }
-        .dash-title {
-          font-size: 13px;
+        .how-item h4 {
+          font-family: var(--font-fraunces), serif;
+          font-size: 19px;
           font-weight: 600;
-          letter-spacing: 0.4px;
-          color: var(--mute);
+          margin-bottom: 3px;
+          color: var(--text);
+        }
+        .how-item p { color: var(--mute); font-size: 14.5px; line-height: 1.7; }
+
+        /* How visual */
+        .how-visual {
+          display: flex;
+          justify-content: center;
+          perspective: 1000px;
+        }
+
+        /* Ring card */
+        .how-card {
+          background: var(--paper);
+          border: 1px solid var(--line-soft);
+          border-radius: 24px;
+          padding: 36px;
+          box-shadow: 0 30px 60px var(--shadow);
+          width: 100%;
+          max-width: 420px;
+          transform-style: preserve-3d;
+        }
+
+        .hc-ring {
+          width: 140px; height: 140px;
+          margin: 0 auto 24px;
+          border-radius: 50%;
+          position: relative;
           display: flex;
           align-items: center;
-          gap: 8px;
+          justify-content: center;
+          background: conic-gradient(var(--terra) 0deg, var(--amber) 220deg, var(--line-soft) 220deg);
         }
-        .dash-live {
-          width: 7px; height: 7px;
-          background: #27C93F;
-          border-radius: 50%;
-          box-shadow: 0 0 8px rgba(39,201,63,0.7);
-          animation: pulse 2s infinite;
-        }
-        .dash-dots { display: flex; gap: 6px; }
-        .dash-dots span { width: 9px; height: 9px; border-radius: 50%; }
-
-        .dash-map {
-          height: 220px;
-          border-radius: 14px;
-          position: relative;
-          overflow: hidden;
-          background: linear-gradient(135deg, #FDF5E6, #FAF0D6);
-          border: 1px solid rgba(196,90,40,0.09);
-          margin-bottom: 14px;
-        }
-        .dash-map::before {
+        .hc-ring::before {
           content: '';
           position: absolute;
-          inset: 0;
-          background-image:
-            linear-gradient(rgba(196,90,40,0.055) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(196,90,40,0.055) 1px, transparent 1px);
-          background-size: 26px 26px;
-        }
-        .dash-map svg { position: absolute; inset: 0; width: 100%; height: 100%; }
-        .dash-map svg path {
-          fill: none;
-          stroke: var(--amber);
-          stroke-width: 2.5;
-          stroke-linecap: round;
-          stroke-dasharray: 7 9;
-          animation: dashMove2 1.5s linear infinite;
-        }
-        @keyframes dashMove2 { to { stroke-dashoffset: -32; } }
-
-        .dmap-pin {
-          position: absolute;
-          width: 20px; height: 20px;
-          border-radius: 50% 50% 50% 0;
-          transform: rotate(-45deg);
-        }
-        .dmap-pin::after {
-          content: ''; position: absolute;
-          top: 6px; left: 6px;
-          width: 8px; height: 8px;
-          background: #fff; border-radius: 50%;
-        }
-        .dmap-pin.s { top: 62%; left: 18%; background: var(--amber-soft); }
-        .dmap-pin.e { top: 26%; right: 18%; background: var(--terra); animation: bob2 1.8s ease-in-out infinite; }
-        @keyframes bob2 {
-          0%,100% { transform: rotate(-45deg) translateY(0);   }
-          50%      { transform: rotate(-45deg) translateY(-7px); }
+          inset: 14px;
+          background: var(--paper);
+          border-radius: 50%;
         }
 
-        .dash-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-        .dstat {
-          background: var(--bg2);
-          border: 1px solid var(--line);
-          border-radius: 12px;
-          padding: 13px;
+        .hc-ring-val {
+          position: relative;
+          font-family: var(--font-fraunces), serif;
+          font-size: 34px;
+          font-weight: 700;
+          color: var(--terra-dark);
+          text-align: center;
+          line-height: 1;
         }
-        .dstat .l  { font-size: 10px; color: var(--mute2); margin-bottom: 5px; letter-spacing: 0.5px; }
-        .dstat .v  { font-family: var(--font-fraunces), serif; font-size: 18px; font-weight: 700; color: var(--text); }
-        .dstat .v.on    { color: #2A8F4C; }
-        .dstat .v.amber { color: var(--amber); }
-        .dstat .v.terra { color: var(--terra); }
+        .hc-ring-val small {
+          display: block;
+          font-family: var(--font-outfit), sans-serif;
+          font-size: 11px;
+          font-weight: 400;
+          color: var(--mute);
+          margin-top: 3px;
+        }
+
+        .hc-stats {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 12px;
+        }
+        .hc-stat {
+          background: var(--bg);
+          border-radius: 14px;
+          padding: 16px;
+          text-align: center;
+        }
+        .hc-stat .v {
+          font-family: var(--font-fraunces), serif;
+          font-size: 22px;
+          font-weight: 700;
+          color: var(--terra-dark);
+        }
+        .hc-stat .l {
+          font-size: 11px;
+          color: var(--mute);
+          margin-top: 3px;
+        }
 
         @media (max-width: 980px) {
           .how-grid { grid-template-columns: 1fr; gap: 48px; }
@@ -475,7 +450,7 @@ export function Audience() {
           position: absolute;
           bottom: 0; left: 5%;
           width: 600px; height: 600px;
-          background: radial-gradient(circle, rgba(224,160,48,0.06), transparent 70%);
+          background: radial-gradient(circle, rgba(232,185,46,0.06), transparent 70%);
           filter: blur(70px);
           pointer-events: none;
         }
@@ -487,48 +462,65 @@ export function Audience() {
         }
 
         .aud-card {
-          background: var(--panel);
-          border: 1px solid var(--line);
-          border-radius: 22px;
+          background: var(--paper);
+          border: 1px solid var(--line-soft);
+          border-radius: 24px;
           padding: 44px 40px;
-          transition: border-color 0.35s, box-shadow 0.35s;
+          transition: transform 0.3s, box-shadow 0.3s;
+          position: relative;
+          overflow: hidden;
           height: 100%;
         }
         .aud-card:hover {
-          border-color: rgba(196,90,40,0.28);
-          box-shadow: 0 12px 36px rgba(42,32,24,0.08);
+          transform: translateY(-6px);
+          box-shadow: 0 26px 54px var(--shadow);
         }
 
         .aud-card .ic {
-          width: 60px; height: 60px;
-          border-radius: 16px;
+          width: 64px; height: 64px;
+          border-radius: 17px;
           display: flex;
           align-items: center;
           justify-content: center;
           margin-bottom: 24px;
+          color: #fff;
         }
-        .aud-card.own .ic   { background: rgba(196,90,40,0.09); border: 1px solid rgba(196,90,40,0.22); }
-        .aud-card.fleet .ic { background: rgba(224,160,48,0.09); border: 1px solid rgba(224,160,48,0.22); }
-        .aud-card .ic :global(svg) { width: 30px; height: 30px; }
-        .aud-card.own   .ic :global(svg) { stroke: var(--terra); }
-        .aud-card.fleet .ic :global(svg) { stroke: var(--amber); }
+        .aud-card.own   .ic { background: linear-gradient(135deg, var(--terra), var(--terra-dark)); }
+        .aud-card.fleet .ic { background: linear-gradient(135deg, var(--amber), var(--mustard));    }
+        .aud-card .ic :global(svg) {
+          width: 32px; height: 32px;
+          stroke: #fff;
+          fill: none;
+          stroke-width: 2;
+        }
 
-        .aud-card h3 { font-family: var(--font-fraunces), serif; font-size: 25px; font-weight: 700; margin-bottom: 12px; color: var(--text); }
-        .aud-card > p { color: var(--mute); font-size: 15px; margin-bottom: 24px; line-height: 1.7; }
+        .aud-card h3 {
+          font-family: var(--font-fraunces), serif;
+          font-size: 27px;
+          font-weight: 700;
+          margin-bottom: 11px;
+          color: var(--text);
+        }
+        .aud-card > p { color: var(--mute); font-size: 15px; margin-bottom: 22px; line-height: 1.7; }
 
         .aud-card li {
-          color: var(--mute);
+          color: var(--text);
           font-size: 14px;
-          padding: 9px 0;
+          padding: 10px 0;
           display: flex;
-          gap: 11px;
+          gap: 12px;
           align-items: center;
-          border-bottom: 1px solid var(--line);
+          border-bottom: 1px solid var(--line-soft);
         }
         .aud-card li:last-child { border: none; }
-        .aud-card li :global(svg) { width: 15px; height: 15px; stroke-width: 3; flex-shrink: 0; }
+        .aud-card li :global(svg) {
+          width: 17px; height: 17px;
+          stroke-width: 3;
+          fill: none;
+          flex-shrink: 0;
+        }
         .aud-card.own   li :global(svg) { stroke: var(--terra); }
-        .aud-card.fleet li :global(svg) { stroke: var(--amber); }
+        .aud-card.fleet li :global(svg) { stroke: var(--mustard); }
 
         @media (max-width: 820px) { .aud-grid { grid-template-columns: 1fr; } }
         @media (max-width: 680px) { .aud-card { padding: 30px 24px; } }

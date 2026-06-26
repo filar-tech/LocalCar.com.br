@@ -11,11 +11,9 @@ export default function ContactSection() {
           <div className="contact-wrap">
             {/* Info */}
             <div className="contact-info">
-              <span className="sec-tag">Fale conosco</span>
-              <h2>Vamos proteger<br />seu veículo hoje</h2>
+              <h2>Fale com a<br />LocalCar</h2>
               <p>
-                Pronto para o controle total? Preencha o formulário ou nos chame
-                diretamente no WhatsApp.
+                Pronto para o controle total do seu veículo? Proteja seu patrimônio hoje mesmo.
               </p>
 
               <div className="ci-item">
@@ -74,15 +72,15 @@ export default function ContactSection() {
         .contact-wrap {
           display: grid;
           grid-template-columns: 1fr 1fr;
-          border: 1px solid var(--line);
-          border-radius: 26px;
+          border: 1px solid var(--line-soft);
+          border-radius: 28px;
           overflow: hidden;
-          background: var(--panel);
-          box-shadow: 0 12px 40px rgba(42,32,24,0.08);
+          background: var(--paper);
+          box-shadow: 0 30px 60px var(--shadow);
         }
 
         .contact-info {
-          padding: 52px 46px;
+          padding: 54px 46px;
           background: linear-gradient(160deg, #2A2018, #3A2A1C);
           border-right: 1px solid var(--line);
           position: relative;
@@ -98,11 +96,9 @@ export default function ContactSection() {
           filter: blur(30px);
         }
 
-        .contact-info .sec-tag { margin-bottom: 12px; color: var(--amber-soft); }
-
         .contact-info h2 {
           font-family: var(--font-fraunces), serif;
-          font-size: 34px;
+          font-size: 36px;
           font-weight: 700;
           line-height: 1.1;
           margin-bottom: 14px;
@@ -112,31 +108,30 @@ export default function ContactSection() {
         .contact-info > p {
           color: rgba(255,255,255,0.7);
           font-size: 15px;
-          margin-bottom: 36px;
+          margin-bottom: 34px;
           line-height: 1.72;
           position: relative;
         }
 
         .ci-item {
           display: flex;
-          gap: 14px;
+          gap: 15px;
           margin-bottom: 22px;
           align-items: center;
           position: relative;
         }
         .ci-icon {
-          width: 44px; height: 44px;
+          width: 46px; height: 46px;
           border-radius: 12px;
           background: rgba(255,255,255,0.10);
-          border: none;
           display: flex;
           align-items: center;
           justify-content: center;
           flex-shrink: 0;
         }
-        .ci-icon :global(svg) { width: 20px; height: 20px; stroke: var(--amber-soft); }
-        .ci-item .l { font-size: 11px; color: rgba(255,255,255,0.55); margin-bottom: 2px; letter-spacing: 0.3px; }
-        .ci-item .v { font-size: 14.5px; font-weight: 600; color: #fff; }
+        .ci-icon :global(svg) { width: 21px; height: 21px; stroke: var(--amber-soft); }
+        .ci-item .l { font-size: 12px; color: rgba(255,255,255,0.55); margin-bottom: 2px; letter-spacing: 0.3px; }
+        .ci-item .v { font-size: 15px; font-weight: 600; color: #fff; }
 
         @media (max-width: 820px) {
           .contact-wrap { grid-template-columns: 1fr; }

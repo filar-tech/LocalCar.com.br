@@ -1,35 +1,35 @@
-import { site, linkWhatsApp } from "@/config";
-import Icon from "./Icon";
+import { linkWhatsApp } from "@/config";
 import ParticlesBackground from "./ParticlesBackground";
 import TiltCard from "./TiltCard";
 
 export default function Hero() {
   return (
     <section className="hero">
-      {/* Partículas — posição absoluta dentro da seção */}
       <ParticlesBackground />
 
-      {/* Blobs de luz quente com animação drift */}
-      <div className="blob b1" aria-hidden="true" />
-      <div className="blob b2" aria-hidden="true" />
+      <div className="hero-blob b1" aria-hidden="true" />
+      <div className="hero-blob b2" aria-hidden="true" />
 
       <div className="hero-inner container">
-        {/* Col esquerda — texto */}
-        <div className="hero-col">
+        {/* Coluna de texto */}
+        <div className="hero-text">
           <div className="hero-badge">
             <span className="dot" aria-hidden="true" />
-            Tecnologia em rastreamento 24h
+            Proteção veicular 24 horas
           </div>
 
           <h1>
-            Proteja seu<br />
-            veículo com<br />
-            <em>inteligência</em>
+            Proteja seu veículo com{" "}
+            <span className="accent">inteligência</span>
           </h1>
 
+          <p className="slogan">
+            <b>Você no controle do seu carro</b> — onde estiver, a qualquer hora.
+          </p>
+
           <p className="lead">
-            {site.tagline} — rastreamento em tempo real, bloqueio remoto e
-            controle total direto do seu celular, 24 horas por dia.
+            Rastreamento em tempo real, bloqueio remoto e gestão completa do seu
+            veículo direto pelo celular. Tecnologia de ponta para a sua tranquilidade.
           </p>
 
           <div className="hero-cta">
@@ -40,21 +40,24 @@ export default function Hero() {
               className="btn btn-primary"
               aria-label="Proteger meu veículo pelo WhatsApp"
             >
-              <Icon name="pin" style={{ width: 18, height: 18 }} aria-hidden="true" />
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                <path d="M12 22s8-4.5 8-11.8A8 8 0 0 0 4 10.2C4 17.5 12 22 12 22z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
               Proteger meu veículo
             </a>
-            <a href="#como" className="btn btn-ghost">Como funciona</a>
+            <a href="#como" className="btn btn-ghost">Ver como funciona</a>
           </div>
 
           <div className="hero-stats" aria-label="Destaques da LocalCar">
             <div className="hero-stat">
-              <div className="num">24/7</div>
-              <div className="lbl">Monitoramento ativo</div>
+              <div className="num">24h</div>
+              <div className="lbl">Monitoramento</div>
             </div>
             <div className="hero-divider" aria-hidden="true" />
             <div className="hero-stat">
               <div className="num">100%</div>
-              <div className="lbl">Controle pelo app</div>
+              <div className="lbl">Pelo aplicativo</div>
             </div>
             <div className="hero-divider" aria-hidden="true" />
             <div className="hero-stat">
@@ -64,52 +67,66 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Col direita — mockup do painel com tilt 3D */}
+        {/* Coluna visual — device card com tilt 3D */}
         <div className="hero-visual" aria-hidden="true">
-          <TiltCard className="vis-tilt">
-            <div className="vis-card">
-              <div className="vis-header">
-                <span className="vis-dot d1" />
-                <span className="vis-dot d2" />
-                <span className="vis-dot d3" />
-                <span className="vis-title">LocalCar · Painel ao vivo</span>
-                <span className="vis-live" />
-              </div>
-
-              <div className="vis-map">
-                <svg viewBox="0 0 300 180" preserveAspectRatio="none">
-                  <path d="M40 130 Q 100 55 170 95 T 270 48" />
+          <TiltCard maxDeg={9} style={{ height: "auto" }}>
+            {/* Float tags */}
+            <div className="float-tag t1">
+              <div className="ico ico-pin">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2">
+                  <path d="M12 22s8-4.5 8-11.8A8 8 0 0 0 4 10.2C4 17.5 12 22 12 22z"/>
+                  <circle cx="12" cy="10" r="3"/>
                 </svg>
-                <span className="vis-pin start" />
-                <span className="vis-pin end"   />
               </div>
+              Localizado
+            </div>
 
-              <div className="vis-stats">
-                <div className="vs-item">
-                  <div className="vs-l">STATUS</div>
-                  <div className="vs-v on">● Ativo</div>
+            <div className="float-tag t2">
+              <div className="ico ico-lock">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2">
+                  <rect x="5" y="11" width="14" height="10" rx="2"/>
+                  <path d="M8 11V7a4 4 0 0 1 8 0v4"/>
+                </svg>
+              </div>
+              Bloqueado
+            </div>
+
+            {/* Device card */}
+            <div className="device">
+              <div className="device-screen">
+                <div className="ds-head">
+                  <div className="ds-title">
+                    <span className="ds-live" />
+                    Meu Veículo
+                  </div>
+                  <span className="ds-ao-vivo">Ao vivo</span>
                 </div>
-                <div className="vs-item">
-                  <div className="vs-l">VELOCIDADE</div>
-                  <div className="vs-v">62 km/h</div>
+
+                <div className="ds-map">
+                  <svg className="ds-route" viewBox="0 0 300 200" preserveAspectRatio="none">
+                    <path d="M55 130 Q 130 50 175 95 T 250 50"/>
+                  </svg>
+                  <div className="ds-pin s" />
+                  <div className="ds-pin e" />
                 </div>
-                <div className="vs-item">
-                  <div className="vs-l">PERCURSO</div>
-                  <div className="vs-v">47 km</div>
+
+                <div className="ds-info">
+                  <div className="ds-row">
+                    <span className="ds-lbl">Status</span>
+                    <span className="ds-val on">● Em movimento</span>
+                  </div>
+                  <div className="ds-row">
+                    <span className="ds-lbl">Velocidade</span>
+                    <span className="ds-val">62 km/h</span>
+                  </div>
+                  <div className="ds-row">
+                    <span className="ds-lbl">Bloqueio do motor</span>
+                    <div className="ds-toggle" />
+                  </div>
                 </div>
               </div>
             </div>
           </TiltCard>
-
-          {/* Chips flutuantes */}
-          <div className="chip chip-a">
-            <Icon name="lock"  style={{ width: 13, height: 13 }} />
-            Bloqueio ativo
-          </div>
-          <div className="chip chip-b">
-            <Icon name="globe" style={{ width: 13, height: 13 }} />
-            Cerca virtual ON
-          </div>
         </div>
       </div>
 
@@ -117,31 +134,31 @@ export default function Hero() {
         .hero {
           position: relative;
           min-height: 100vh;
-          padding-top: 72px;
+          padding-top: 90px;
           display: flex;
           align-items: center;
           overflow: hidden;
-          /* Radial gradient de âmbar suave + fundo bege */
           background:
             radial-gradient(ellipse 70% 60% at 78% 35%, rgba(224,160,48,0.16), transparent 60%),
             var(--bg);
         }
 
-        /* blobs — com animação drift */
-        .blob {
+        /* blobs */
+        .hero-blob {
           position: absolute;
           border-radius: 50%;
           pointer-events: none;
-          filter: blur(90px);
+          filter: blur(60px);
           opacity: 0.5;
+          z-index: 0;
         }
-        .blob.b1 {
+        .hero-blob.b1 {
           width: 480px; height: 480px;
           background: radial-gradient(circle, rgba(196,90,40,0.30), transparent 70%);
           top: -100px; right: -80px;
           animation: drift 14s ease-in-out infinite;
         }
-        .blob.b2 {
+        .hero-blob.b2 {
           width: 360px; height: 360px;
           background: radial-gradient(circle, rgba(224,160,48,0.28), transparent 70%);
           bottom: -60px; left: -60px;
@@ -153,8 +170,8 @@ export default function Hero() {
           position: relative;
           z-index: 3;
           display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 64px;
+          grid-template-columns: 1.05fr 0.95fr;
+          gap: 56px;
           align-items: center;
           padding-top: 70px;
           padding-bottom: 80px;
@@ -166,16 +183,18 @@ export default function Hero() {
           align-items: center;
           gap: 10px;
           background: rgba(196,90,40,0.08);
-          border: 1px solid rgba(196,90,40,0.22);
+          border: 1px solid rgba(196,90,40,0.25);
           color: var(--terra-dark);
           font-weight: 600;
-          font-size: 11.5px;
-          letter-spacing: 2.5px;
+          font-size: 12px;
+          letter-spacing: 1.5px;
           text-transform: uppercase;
           padding: 8px 18px;
           border-radius: 50px;
-          margin-bottom: 26px;
-          animation: fadeUp 0.7s ease both;
+          margin-bottom: 28px;
+          opacity: 0;
+          transform: translateY(20px);
+          animation: rise 0.7s ease forwards;
         }
         .dot {
           width: 7px; height: 7px;
@@ -184,33 +203,52 @@ export default function Hero() {
           animation: pulse 2s infinite;
         }
 
-        /* heading — gradiente no accent (em) */
-        .hero-col h1 {
+        /* heading */
+        .hero-text h1 {
           font-family: var(--font-fraunces), serif;
-          font-size: clamp(46px, 5.8vw, 84px);
+          font-size: clamp(42px, 6vw, 82px);
           font-weight: 900;
           line-height: 0.98;
           letter-spacing: -1.5px;
           color: var(--text);
-          margin-bottom: 22px;
-          animation: fadeUp 0.7s ease 0.1s both;
+          margin-bottom: 18px;
+          opacity: 0;
+          transform: translateY(24px);
+          animation: rise 0.7s ease 0.1s forwards;
         }
-        .hero-col h1 em {
-          font-style: italic;
+        .hero-text h1 .accent {
           background: linear-gradient(120deg, var(--terra), var(--amber));
           -webkit-background-clip: text;
           background-clip: text;
           -webkit-text-fill-color: transparent;
+          font-style: italic;
+        }
+
+        /* slogan */
+        .slogan {
+          font-size: clamp(17px, 2.2vw, 24px);
+          font-weight: 500;
+          color: var(--mute);
+          margin-bottom: 24px;
+          opacity: 0;
+          transform: translateY(24px);
+          animation: rise 0.7s ease 0.2s forwards;
+        }
+        .slogan b {
+          color: var(--terra-dark);
+          font-weight: 600;
         }
 
         /* lead */
         .lead {
           color: var(--mute);
-          font-size: 17.5px;
-          max-width: 460px;
-          margin-bottom: 34px;
+          font-size: 17px;
+          max-width: 480px;
+          margin-bottom: 36px;
           line-height: 1.78;
-          animation: fadeUp 0.7s ease 0.2s both;
+          opacity: 0;
+          transform: translateY(24px);
+          animation: rise 0.7s ease 0.3s forwards;
         }
 
         /* CTAs */
@@ -218,9 +256,10 @@ export default function Hero() {
           display: flex;
           gap: 14px;
           flex-wrap: wrap;
-          animation: fadeUp 0.7s ease 0.3s both;
+          opacity: 0;
+          transform: translateY(24px);
+          animation: rise 0.7s ease 0.4s forwards;
         }
-        .hero-cta .btn :global(svg) { stroke: #fff; }
 
         /* stats */
         .hero-stats {
@@ -228,7 +267,8 @@ export default function Hero() {
           align-items: center;
           gap: 40px;
           margin-top: 48px;
-          animation: fadeUp 0.7s ease 0.5s both;
+          opacity: 0;
+          animation: rise 0.7s ease 0.5s forwards;
         }
         .hero-divider {
           width: 1px; height: 34px;
@@ -247,85 +287,123 @@ export default function Hero() {
           margin-top: 5px;
         }
 
-        /* ---- Visual / mockup ---- */
+        /* ---- Visual / device card ---- */
         .hero-visual {
-          position: relative;
-          animation: fadeUp 0.9s ease 0.3s both;
-        }
-        .vis-tilt {
-          position: relative;
+          display: flex;
+          justify-content: center;
+          opacity: 0;
+          animation: rise 0.9s ease 0.3s forwards;
+          perspective: 1000px;
         }
 
-        .vis-card {
+        /* Float tags */
+        .float-tag {
+          position: absolute;
           background: var(--paper);
           border: 1px solid var(--line-soft);
+          border-radius: 14px;
+          padding: 10px 14px;
+          box-shadow: 0 14px 30px rgba(120,72,30,0.18);
+          display: flex;
+          align-items: center;
+          gap: 9px;
+          font-size: 12px;
+          font-weight: 600;
+          color: var(--text);
+          white-space: nowrap;
+          z-index: 4;
+        }
+        .float-tag .ico {
+          width: 30px; height: 30px;
+          border-radius: 9px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+        }
+        .ico-pin  { background: linear-gradient(135deg, var(--terra), var(--mustard)); }
+        .ico-lock { background: linear-gradient(135deg, var(--amber), var(--mustard)); }
+        .float-tag.t1 { top: 30px; left: -46px; animation: floaty 4s ease-in-out infinite; }
+        .float-tag.t2 { bottom: 50px; right: -40px; animation: floaty 5s ease-in-out infinite 0.6s; }
+        @keyframes floaty {
+          0%, 100% { transform: translateY(0);   }
+          50%       { transform: translateY(-12px); }
+        }
+
+        /* Device */
+        .device {
+          width: 300px;
+          background: var(--paper);
           border-radius: 30px;
           padding: 20px;
           box-shadow: 0 40px 80px rgba(120,72,30,0.25), 0 0 0 1px var(--line-soft);
         }
-
-        .vis-header {
-          display: flex;
-          align-items: center;
-          gap: 6px;
-          margin-bottom: 16px;
-        }
-        .vis-dot { width: 9px; height: 9px; border-radius: 50%; }
-        .vis-dot.d1 { background: #FF5F57; }
-        .vis-dot.d2 { background: #FFBB2C; }
-        .vis-dot.d3 { background: #27C93F; }
-        .vis-title {
-          margin-left: 8px;
-          font-size: 12.5px;
-          font-weight: 600;
-          color: var(--mute);
-          letter-spacing: 0.3px;
-          flex: 1;
-        }
-        .vis-live {
-          width: 7px; height: 7px;
-          background: #27C93F;
-          border-radius: 50%;
-          box-shadow: 0 0 8px rgba(39,201,63,0.7);
-          animation: pulse 2s infinite;
-        }
-
-        /* map */
-        .vis-map {
-          height: 200px;
+        .device-screen {
+          background: linear-gradient(165deg, #fff, var(--bg2));
           border-radius: 20px;
           overflow: hidden;
+          border: 1px solid var(--line-soft);
+        }
+
+        /* ds-head */
+        .ds-head {
+          padding: 16px 18px 12px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+        .ds-title {
+          font-weight: 600;
+          font-size: 13px;
+          display: flex;
+          align-items: center;
+          gap: 7px;
+        }
+        .ds-live {
+          display: inline-block;
+          width: 7px; height: 7px;
+          background: #3FB871;
+          border-radius: 50%;
+          box-shadow: 0 0 0 0 rgba(63,184,113,0.5);
+          animation: pulse 2s infinite;
+        }
+        .ds-ao-vivo {
+          font-size: 11px;
+          color: var(--mute);
+        }
+
+        /* ds-map */
+        .ds-map {
+          height: 200px;
+          position: relative;
           background:
             linear-gradient(rgba(196,90,40,0.06) 1px, transparent 1px),
             linear-gradient(90deg, rgba(196,90,40,0.06) 1px, transparent 1px),
             linear-gradient(135deg, #F6EEDF, #EFE3CE);
           background-size: 24px 24px, 24px 24px, 100% 100%;
-          border: 1px solid var(--line-soft);
-          margin-bottom: 14px;
-          position: relative;
         }
-        .vis-map svg {
+        .ds-route {
           position: absolute;
           inset: 0;
           width: 100%; height: 100%;
         }
-        .vis-map svg path {
+        .ds-route path {
           fill: none;
           stroke: var(--terra);
           stroke-width: 3;
           stroke-linecap: round;
           stroke-dasharray: 6 8;
-          animation: dashMove 1.4s linear infinite;
+          animation: dash 1.4s linear infinite;
         }
-        @keyframes dashMove { to { stroke-dashoffset: -28; } }
+        @keyframes dash { to { stroke-dashoffset: -28; } }
 
-        .vis-pin {
+        .ds-pin {
           position: absolute;
           width: 20px; height: 20px;
           border-radius: 50% 50% 50% 0;
           transform: rotate(-45deg);
         }
-        .vis-pin::after {
+        .ds-pin::after {
           content: '';
           position: absolute;
           top: 5px; left: 5px;
@@ -333,61 +411,68 @@ export default function Hero() {
           background: #fff;
           border-radius: 50%;
         }
-        .vis-pin.start { top: 62%; left: 15%; background: var(--amber-soft); }
-        .vis-pin.end   { top: 22%; right: 18%; background: var(--terra); animation: bob 1.8s ease-in-out infinite; }
+        .ds-pin.s { background: var(--amber); top: 60%; left: 20%; }
+        .ds-pin.e { background: var(--terra); top: 25%; right: 20%; animation: bob 1.8s ease-in-out infinite; }
         @keyframes bob {
-          0%,100% { transform: rotate(-45deg) translateY(0);   }
-          50%      { transform: rotate(-45deg) translateY(-7px); }
+          0%, 100% { transform: rotate(-45deg) translateY(0);   }
+          50%       { transform: rotate(-45deg) translateY(-7px); }
         }
 
-        .vis-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; }
-        .vs-item {
-          background: var(--bg2);
-          border: 1px solid var(--line);
-          border-radius: 10px;
-          padding: 12px 10px;
+        /* ds-info */
+        .ds-info {
+          padding: 14px 18px;
+          display: flex;
+          flex-direction: column;
+          gap: 9px;
         }
-        .vs-l { font-size: 10px; color: var(--mute2); margin-bottom: 4px; letter-spacing: 0.5px; font-weight: 500; }
-        .vs-v {
-          font-family: var(--font-fraunces), serif;
-          font-size: 15.5px;
-          font-weight: 700;
-          color: var(--text);
-        }
-        .vs-v.on { color: #2A8F4C; }
-
-        /* chips flutuantes */
-        .chip {
-          position: absolute;
-          background: var(--paper);
-          border: 1px solid var(--line-soft);
-          border-radius: 14px;
-          padding: 10px 14px;
-          font-size: 12px;
-          font-weight: 600;
-          color: var(--text);
+        .ds-row {
           display: flex;
           align-items: center;
-          gap: 9px;
-          box-shadow: 0 14px 30px var(--shadow);
+          justify-content: space-between;
         }
-        .chip :global(svg) { stroke: var(--terra); flex-shrink: 0; }
-        .chip-a { top: -16px; right: -44px; animation: floatY 4s ease-in-out infinite; }
-        .chip-b { bottom: 40px; left: -44px; animation: floatY 5s ease-in-out infinite 0.6s; }
+        .ds-lbl {
+          font-size: 11px;
+          color: var(--mute);
+        }
+        .ds-val {
+          font-size: 13px;
+          font-weight: 600;
+          color: var(--text);
+        }
+        .ds-val.on { color: #3FB871; }
+        .ds-toggle {
+          width: 40px; height: 23px;
+          background: #3FB871;
+          border-radius: 50px;
+          position: relative;
+          flex-shrink: 0;
+        }
+        .ds-toggle::after {
+          content: '';
+          position: absolute;
+          top: 3px; right: 3px;
+          width: 17px; height: 17px;
+          background: #fff;
+          border-radius: 50%;
+        }
+
+        @keyframes rise { to { opacity: 1; transform: translateY(0); } }
 
         @media (max-width: 1020px) {
           .hero-inner { gap: 40px; }
-          .chip-a { right: -10px; }
-          .chip-b { left: -10px; }
+          .float-tag.t1 { left: -10px; }
+          .float-tag.t2 { right: -10px; }
         }
         @media (max-width: 860px) {
           .hero-inner { grid-template-columns: 1fr; padding-top: 50px; }
-          .hero-visual { max-width: 480px; margin: 0 auto; }
-          .chip-a { right: 0; } .chip-b { left: 0; }
+          .hero-visual { max-width: 360px; margin: 0 auto; }
+          .float-tag.t1 { left: -10px; }
+          .float-tag.t2 { right: -10px; }
         }
         @media (max-width: 480px) {
           .hero-stats { gap: 20px; }
           .hero-stat .num { font-size: 28px; }
+          .device { width: 260px; }
         }
       `}</style>
     </section>

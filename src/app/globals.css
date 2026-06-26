@@ -1,36 +1,36 @@
 /* ===================================================================
-   LOCALCAR — V3 LIGHT THEME  (bege/papel · terracota · âmbar)
+   LOCALCAR — V3 LIGHT THEME  (papel · mostarda-dourada · âmbar)
    CSS variables centralizadas. Edite aqui para propagar em todo o site.
    =================================================================== */
 
 :root {
   /* Backgrounds */
-  --bg:     #F4EFE6;
-  --bg2:    #ECE4D6;   /* fundo de seções alternadas (sandy/bege) */
-  --paper:  #FBF8F2;   /* fundo de cards e painéis (creme quente) */
-  --panel:  #FBF8F2;   /* alias de --paper */
-  --panel2: #EDE8DF;
+  --bg:     #F6F1E4;
+  --bg2:    #EEE6D2;
+  --paper:  #FCFAF3;
+  --panel:  #FCFAF3;
+  --panel2: #EEE6D2;
 
-  /* Brand palette */
-  --terra:       #C45A28;
-  --terra-dark:  #A8451C;
-  --amber:       #E0A030;
-  --mustard:     #D98E2B;
-  --amber-soft:  #EBC06A;
+  /* Brand palette — mostarda dourada */
+  --terra:       #D69A1E;   /* mostarda dourada (cor principal) */
+  --terra-dark:  #B07D12;   /* dourado escuro */
+  --amber:       #E8B92E;
+  --mustard:     #E0A91C;
+  --amber-soft:  #F2D472;
 
   /* Text */
-  --text:  #2A2018;
-  --mute:  #6B5D4F;
+  --text:  #2B2310;
+  --mute:  #6E6347;
   --mute2: #9A8878;
 
   /* Lines & shadows */
-  --line:      rgba(42, 32, 24, 0.12);
-  --line-soft: rgba(42, 32, 24, 0.07);
-  --shadow:    rgba(120, 72, 30, 0.14);
+  --line:      rgba(43, 35, 16, 0.12);
+  --line-soft: rgba(43, 35, 16, 0.07);
+  --shadow:    rgba(150, 110, 20, 0.16);
 
   /* Glow helpers */
-  --terra-glow: rgba(196, 90, 40, 0.22);
-  --amber-glow: rgba(224, 160, 48, 0.28);
+  --terra-glow: rgba(214, 154, 30, 0.22);
+  --amber-glow: rgba(232, 185, 46, 0.28);
 }
 
 /* ---- Reset ---- */
@@ -46,7 +46,6 @@ body {
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* Cursor customizado — oculta o padrão em desktop */
   cursor: none;
 }
 
@@ -78,7 +77,11 @@ ul { list-style: none; }
   padding: 0 32px;
 }
 
-section { scroll-margin-top: 90px; }
+section {
+  position: relative;
+  z-index: 2;
+  scroll-margin-top: 90px;
+}
 
 /* ---- Section headings ---- */
 .sec-head {
@@ -106,7 +109,8 @@ section { scroll-margin-top: 90px; }
   color: var(--text);
 }
 
-.sec-title .grad {
+.sec-title .grad,
+.sec-title .accent {
   font-style: italic;
   color: var(--terra);
 }
@@ -124,7 +128,7 @@ section { scroll-margin-top: 90px; }
   align-items: center;
   gap: 10px;
   padding: 15px 28px;
-  border-radius: 50px;       /* pill */
+  border-radius: 50px;
   font-family: var(--font-outfit), sans-serif;
   font-weight: 600;
   font-size: 15.5px;
@@ -137,11 +141,11 @@ section { scroll-margin-top: 90px; }
 .btn-primary {
   background: linear-gradient(135deg, var(--terra), var(--mustard));
   color: #fff;
-  box-shadow: 0 10px 26px rgba(196, 90, 40, 0.32);
+  box-shadow: 0 10px 26px rgba(214, 154, 30, 0.32);
 }
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 16px 36px rgba(196, 90, 40, 0.44);
+  box-shadow: 0 16px 36px rgba(214, 154, 30, 0.44);
 }
 
 .btn-ghost {
@@ -191,6 +195,8 @@ section { scroll-margin-top: 90px; }
   from { opacity: 0; transform: translateY(22px); }
   to   { opacity: 1; transform: translateY(0);    }
 }
+
+@keyframes rise { to { opacity: 1; transform: translateY(0); } }
 
 @keyframes pulse {
   0%   { box-shadow: 0 0 0 0   var(--terra-glow); }

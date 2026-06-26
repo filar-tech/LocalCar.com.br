@@ -23,8 +23,8 @@ export default function Reveal({ children, delay = 0, className, style }: Reveal
     }
 
     el.style.opacity    = "0";
-    el.style.transform  = "translateY(26px)";
-    el.style.transition = `opacity 0.62s ease ${delay}ms, transform 0.62s ease ${delay}ms`;
+    el.style.transform  = "translateY(40px)";
+    el.style.transition = `opacity 0.7s ease ${delay}ms, transform 0.7s ease ${delay}ms`;
 
     const observer = new IntersectionObserver(
       (entries) => {

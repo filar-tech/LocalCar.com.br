@@ -6,14 +6,14 @@ interface Particle {
   x: number; y: number;
   vx: number; vy: number;
   r: number;
-  color: string;
+  c: string;
+  a: number;
 }
 
 const COLORS = [
-  "rgba(196,90,40,0.45)",
-  "rgba(224,160,48,0.40)",
-  "rgba(235,192,106,0.40)",
-  "rgba(168,69,28,0.35)",
+  "rgba(214,154,30,",
+  "rgba(232,185,46,",
+  "rgba(224,169,28,",
 ];
 
 export default function ParticlesBackground() {
@@ -27,10 +27,6 @@ export default function ParticlesBackground() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    const mobile  = window.innerWidth < 768;
-    const COUNT   = mobile ? 22 : 55;
-    const CONNECT = mobile ? 80 : 120;
-
     let particles: Particle[] = [];
     let animId: number;
     let W = 0, H = 0;
@@ -41,13 +37,15 @@ export default function ParticlesBackground() {
     }
 
     function init() {
+      const COUNT = Math.min(60, Math.floor(W / 24));
       particles = Array.from({ length: COUNT }, () => ({
-        x:     Math.random() * W,
-        y:     Math.random() * H,
-        vx:    (Math.random() - 0.5) * 0.35,
-        vy:    (Math.random() - 0.5) * 0.35,
-        r:     Math.random() * 1.8 + 0.8,
-        color: COLORS[Math.floor(Math.random() * COLORS.length)],
+        x:  Math.random() * W,
+        y:  Math.random() * H,
+        vx: (Math.random() - 0.5) * 0.35,
+        vy: (Math.random() - 0.5) * 0.35,
+        r:  Math.random() * 1.8 + 0.8,
+        c:  COLORS[Math.floor(Math.random() * COLORS.length)],
+        a:  Math.random() * 0.4 + 0.1,
       }));
     }
 
@@ -60,9 +58,9 @@ export default function ParticlesBackground() {
           const dx   = particles[i].x - particles[j].x;
           const dy   = particles[i].y - particles[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < CONNECT) {
+          if (dist < 120) {
             ctx!.beginPath();
-            ctx!.strokeStyle = `rgba(196,90,40,${0.10 * (1 - dist / CONNECT)})`;
+            ctx!.strokeStyle = `rgba(214,154,30,${0.09 * (1 - dist / 120)})`;
             ctx!.lineWidth   = 0.7;
             ctx!.moveTo(particles[i].x, particles[i].y);
             ctx!.lineTo(particles[j].x, particles[j].y);
@@ -75,15 +73,15 @@ export default function ParticlesBackground() {
       for (const p of particles) {
         ctx!.beginPath();
         ctx!.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx!.fillStyle = p.color;
+        ctx!.fillStyle = p.c + p.a + ")";
         ctx!.fill();
 
         p.x += p.vx;
         p.y += p.vy;
-        if (p.x < 0) p.x = W;
-        if (p.x > W) p.x = 0;
-        if (p.y < 0) p.y = H;
-        if (p.y > H) p.y = 0;
+
+        // Bounce nas bordas
+        if (p.x < 0 || p.x > W) p.vx *= -1;
+        if (p.y < 0 || p.y > H) p.vy *= -1;
       }
 
       animId = requestAnimationFrame(draw);

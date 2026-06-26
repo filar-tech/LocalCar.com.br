@@ -85,7 +85,7 @@ export default function Footer() {
         }
 
         .foot-logo {
-          height: 44px;
+          height: 64px;
           width: auto;
           object-fit: contain;
           display: block;

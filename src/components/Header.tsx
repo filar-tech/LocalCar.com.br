@@ -147,12 +147,12 @@ export default function Header() {
         }
         .nav-links li a:hover {
           color: var(--text);
-          background: rgba(196, 90, 40, 0.07);
+          background: rgba(214, 154, 30, 0.07);
         }
         .nav-links li a.active {
           color: var(--terra);
           font-weight: 700;
-          background: rgba(196, 90, 40, 0.09);
+          background: rgba(214, 154, 30, 0.09);
         }
         .nav-links li a.active::after {
           content: '';
@@ -174,13 +174,13 @@ export default function Header() {
           border-radius: 50px !important;
           font-weight: 600 !important;
           white-space: nowrap;
-          box-shadow: 0 8px 22px rgba(196, 90, 40, 0.3);
+          box-shadow: 0 8px 22px rgba(214, 154, 30, 0.3);
           transition: transform 0.25s, box-shadow 0.25s !important;
           letter-spacing: 0.1px;
         }
         .nav-cta:hover {
           transform: translateY(-2px) !important;
-          box-shadow: 0 12px 30px rgba(196, 90, 40, 0.42) !important;
+          box-shadow: 0 12px 30px rgba(214, 154, 30, 0.42) !important;
           background: linear-gradient(135deg, var(--terra), var(--mustard)) !important;
         }
 
