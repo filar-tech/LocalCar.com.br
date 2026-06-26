@@ -9,13 +9,13 @@ export const site = {
   tagline: "Você no controle do seu carro",
 
   // >>> TROQUE pelo número real: formato 55 + DDD + número (só dígitos)
-  whatsapp: "5500000000000",
+  whatsapp: "5512991903255",
   // Telefone exibido (formato bonito)
-  telefoneExibicao: "(00) 00000-0000",
+  telefoneExibicao: "(12) 99190-3255",
 
   // >>> TROQUE pelo @ real do Instagram
-  instagram: "localcar",
-  instagramUrl: "https://instagram.com/localcar",
+  instagram: "localcarsjc",
+  instagramUrl: "https://instagram.com/localcarsjc",
 
   // Endereço (do banner enviado pelo cliente)
   endereco: {
