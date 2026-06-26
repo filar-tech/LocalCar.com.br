@@ -130,7 +130,7 @@ export default function Header() {
         .nav-links {
           display: flex;
           align-items: center;
-          gap: 2px;
+          gap: 32px;
         }
 
         .nav-links li a {
@@ -138,9 +138,9 @@ export default function Header() {
           color: var(--mute);
           font-family: var(--font-outfit), sans-serif;
           font-weight: 500;
-          font-size: 14px;
+          font-size: 15px;
           letter-spacing: 0.2px;
-          padding: 8px 14px;
+          padding: 6px 10px;
           border-radius: 8px;
           transition: color 0.2s, background 0.2s;
           position: relative;
