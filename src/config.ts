@@ -114,6 +114,28 @@ export const publicos = [
       "Redução de custos operacionais",
     ],
   },
+  {
+    tipo: "moto",
+    titulo: "Motociclistas",
+    desc: "Para quem pilota moto convencional ou elétrica e quer proteção completa com rastreamento preciso.",
+    itens: [
+      "Localização em tempo real",
+      "Bloqueio remoto do motor",
+      "Alertas de movimentação suspeita",
+      "Compatível com motos elétricas",
+    ],
+  },
+  {
+    tipo: "bike",
+    titulo: "Ciclistas",
+    desc: "Para bicicletas convencionais e elétricas. Proteção discreta e monitoramento via app.",
+    itens: [
+      "Rastreamento discreto",
+      "Alerta de saída da cerca virtual",
+      "Histórico de trajetos",
+      "Ideal para e-bikes",
+    ],
+  },
 ];
 
 // Serviços (página /servicos)

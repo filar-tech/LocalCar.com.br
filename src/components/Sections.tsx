@@ -410,7 +410,7 @@ export function Audience() {
           <div className="sec-head">
             <span className="sec-tag">Para quem é</span>
             <h2 className="sec-title">
-              Para o seu carro <span className="grad">e para sua frota</span>
+              Para carros, frotas, <span className="grad">motos e bikes</span>
             </h2>
           </div>
         </Reveal>
@@ -421,7 +421,15 @@ export function Audience() {
               <Reveal delay={i * 100}>
                 <div className={`aud-card ${p.tipo}`} data-hover>
                   <div className="ic" aria-hidden="true">
-                    <Icon name={p.tipo === "own" ? "car" : "truck"} className="ic-svg" />
+                    <Icon
+                      name={
+                        p.tipo === "own" ? "car"
+                        : p.tipo === "fleet" ? "truck"
+                        : p.tipo === "moto" ? "moto"
+                        : "bike"
+                      }
+                      className="ic-svg"
+                    />
                   </div>
                   <h3>{p.titulo}</h3>
                   <p>{p.desc}</p>
@@ -487,6 +495,8 @@ export function Audience() {
         }
         .aud-card.own   .ic { background: linear-gradient(135deg, var(--terra), var(--terra-dark)); }
         .aud-card.fleet .ic { background: linear-gradient(135deg, var(--amber), var(--mustard));    }
+        .aud-card.moto  .ic { background: linear-gradient(135deg, #B07D12, #7A550C);               }
+        .aud-card.bike  .ic { background: linear-gradient(135deg, var(--mustard), var(--amber-soft)); }
         .ic-svg {
           width: 32px;
           height: 32px;
@@ -525,6 +535,8 @@ export function Audience() {
         }
         .aud-card.own   .chk-ic { stroke: var(--terra); }
         .aud-card.fleet .chk-ic { stroke: var(--mustard); }
+        .aud-card.moto  .chk-ic { stroke: var(--terra-dark); }
+        .aud-card.bike  .chk-ic { stroke: var(--amber); }
 
         @media (max-width: 820px) { .aud-grid { grid-template-columns: 1fr; } }
         @media (max-width: 680px) { .aud-card { padding: 30px 24px; } }
