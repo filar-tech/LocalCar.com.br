@@ -7,10 +7,10 @@ import { usePathname } from "next/navigation";
 import { linkWhatsApp } from "@/config";
 
 const navItems = [
-  { href: "/",         label: "Início"   },
-  { href: "/servicos", label: "Serviços" },
-  { href: "/sobre",    label: "Sobre"    },
-  { href: "/contato",  label: "Contato"  },
+  { href: "/#recursos", label: "Recursos"       },
+  { href: "/#como",     label: "Como funciona"  },
+  { href: "/#publico",  label: "Para quem"      },
+  { href: "/contato",   label: "Contato"        },
 ];
 
 export default function Header() {
@@ -41,7 +41,7 @@ export default function Header() {
   }, [open]);
 
   const isActive = (href: string) =>
-    href === "/" ? pathname === "/" : pathname.startsWith(href);
+    !href.includes("#") && (href === "/" ? pathname === "/" : pathname.startsWith(href));
 
   return (
     <header className={`site-header ${scrolled ? "scrolled" : ""}`}>
@@ -50,8 +50,8 @@ export default function Header() {
           <Image
             src="/logo-localcar.png"
             alt="LocalCar - Rastreamento Automotivo"
-            width={120}
-            height={128}
+            width={52}
+            height={52}
             priority
           />
         </Link>
@@ -120,8 +120,8 @@ export default function Header() {
         }
 
         .nav-logo :global(img) {
-          height: 46px;
-          width: auto;
+          height: 52px;
+          width: 52px;
           object-fit: contain;
           transition: transform 0.3s;
         }
