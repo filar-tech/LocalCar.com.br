@@ -1,4 +1,4 @@
-import { recursos, comoFunciona, publicos } from "@/config";
+import { recursos, comoFunciona, publicos, linkWhatsApp } from "@/config";
 import Icon from "./Icon";
 import TiltCard from "./TiltCard";
 import Reveal from "./Reveal";
@@ -22,17 +22,15 @@ export function Marquee() {
       <div className="mq-track">
         {all.map((t, i) => (
           <span className="mq-item" key={i}>
-            <span className="mq-dot" aria-hidden="true" />
+            <span className="mq-star" aria-hidden="true">✦</span>
             {t}
           </span>
         ))}
       </div>
       <style>{`
         .marquee {
-          background: var(--bg2);
-          border-top: 1px solid var(--line);
-          border-bottom: 1px solid var(--line);
-          padding: 18px 0;
+          background: linear-gradient(135deg, var(--terra), var(--mustard));
+          padding: 16px 0;
           overflow: hidden;
         }
         .mq-track {
@@ -43,22 +41,18 @@ export function Marquee() {
           width: max-content;
         }
         .mq-item {
-          font-family: var(--font-outfit), sans-serif;
+          font-family: var(--font-fraunces), serif;
+          font-style: italic;
           font-weight: 600;
-          font-size: 14px;
-          text-transform: uppercase;
-          letter-spacing: 2px;
-          color: var(--mute);
+          font-size: 19px;
+          color: #fff;
           display: flex;
           align-items: center;
-          gap: 12px;
+          gap: 13px;
         }
-        .mq-dot {
-          display: inline-block;
-          width: 6px; height: 6px;
-          border-radius: 50%;
-          background: var(--terra);
-          opacity: 0.6;
+        .mq-star {
+          color: rgba(255,255,255,0.7);
+          font-style: normal;
         }
         @keyframes mqScroll { to { transform: translateX(-50%); } }
       `}</style>
@@ -134,10 +128,22 @@ export function Features() {
           height: 100%;
           transition: border-color 0.35s, box-shadow 0.35s;
         }
+        /* Linha gradiente que aparece no topo ao hover */
+        .feat-card::after {
+          content: '';
+          position: absolute;
+          left: 0; top: 0;
+          height: 4px; width: 100%;
+          background: linear-gradient(90deg, var(--terra), var(--amber));
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: transform 0.35s;
+        }
         .feat-card:hover {
           border-color: rgba(196,90,40,0.30);
           box-shadow: 0 10px 30px rgba(42,32,24,0.08);
         }
+        .feat-card:hover::after { transform: scaleX(1); }
 
         .feat-num {
           position: absolute;
@@ -526,6 +532,93 @@ export function Audience() {
 
         @media (max-width: 820px) { .aud-grid { grid-template-columns: 1fr; } }
         @media (max-width: 680px) { .aud-card { padding: 30px 24px; } }
+      `}</style>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  CTABanner                                                           */
+/* ------------------------------------------------------------------ */
+export function CTABanner() {
+  return (
+    <section className="cta-banner">
+      <div className="container">
+        <Reveal>
+          <div className="cta-inner">
+            <h2>Pronto para ter o controle total?</h2>
+            <p>Proteja seu patrimônio hoje mesmo com a tecnologia da LocalCar.</p>
+            <a
+              href={linkWhatsApp()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-light"
+            >
+              Solicitar orçamento agora
+            </a>
+          </div>
+        </Reveal>
+      </div>
+
+      <style>{`
+        .cta-banner { padding: 90px 0; }
+        .cta-inner {
+          background: linear-gradient(135deg, var(--terra), var(--mustard));
+          border-radius: 30px;
+          padding: 64px 56px;
+          text-align: center;
+          position: relative;
+          overflow: hidden;
+        }
+        .cta-inner::before {
+          content: '';
+          position: absolute;
+          top: -50%; left: -10%;
+          width: 300px; height: 300px;
+          background: radial-gradient(circle, rgba(255,255,255,0.18), transparent 70%);
+        }
+        .cta-inner::after {
+          content: '';
+          position: absolute;
+          bottom: -50%; right: -5%;
+          width: 340px; height: 340px;
+          background: radial-gradient(circle, rgba(168,69,28,0.3), transparent 70%);
+        }
+        .cta-inner h2 {
+          font-family: var(--font-fraunces), serif;
+          font-size: clamp(30px, 4vw, 46px);
+          font-weight: 700;
+          color: #fff;
+          margin-bottom: 14px;
+          position: relative;
+        }
+        .cta-inner p {
+          color: rgba(255,255,255,0.9);
+          font-size: 17px;
+          margin-bottom: 32px;
+          position: relative;
+        }
+        .btn-light {
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          padding: 15px 28px;
+          border-radius: 50px;
+          font-family: var(--font-outfit), sans-serif;
+          font-weight: 600;
+          font-size: 16px;
+          background: #fff;
+          color: var(--terra-dark);
+          box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+          position: relative;
+          transition: transform 0.25s, box-shadow 0.25s;
+          text-decoration: none;
+        }
+        .btn-light:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 18px 40px rgba(0,0,0,0.26);
+        }
+        @media (max-width: 680px) { .cta-inner { padding: 44px 28px; } }
       `}</style>
     </section>
   );

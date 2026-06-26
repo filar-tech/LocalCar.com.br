@@ -83,21 +83,22 @@ export default function ContactSection() {
 
         .contact-info {
           padding: 52px 46px;
-          background: linear-gradient(160deg, var(--bg2) 0%, var(--bg) 100%);
+          background: linear-gradient(160deg, #2A2018, #3A2A1C);
           border-right: 1px solid var(--line);
           position: relative;
           overflow: hidden;
+          color: #fff;
         }
         .contact-info::before {
           content: '';
           position: absolute;
-          bottom: -80px; left: -80px;
-          width: 320px; height: 320px;
-          background: radial-gradient(circle, rgba(196,90,40,0.08), transparent 70%);
-          filter: blur(50px);
+          bottom: -60px; right: -60px;
+          width: 240px; height: 240px;
+          background: radial-gradient(circle, rgba(224,160,48,0.3), transparent 70%);
+          filter: blur(30px);
         }
 
-        .contact-info .sec-tag { margin-bottom: 12px; }
+        .contact-info .sec-tag { margin-bottom: 12px; color: var(--amber-soft); }
 
         .contact-info h2 {
           font-family: var(--font-fraunces), serif;
@@ -105,11 +106,11 @@ export default function ContactSection() {
           font-weight: 700;
           line-height: 1.1;
           margin-bottom: 14px;
-          color: var(--text);
+          color: #fff;
           position: relative;
         }
         .contact-info > p {
-          color: var(--mute);
+          color: rgba(255,255,255,0.7);
           font-size: 15px;
           margin-bottom: 36px;
           line-height: 1.72;
@@ -126,20 +127,20 @@ export default function ContactSection() {
         .ci-icon {
           width: 44px; height: 44px;
           border-radius: 12px;
-          background: rgba(196,90,40,0.07);
-          border: 1px solid rgba(196,90,40,0.16);
+          background: rgba(255,255,255,0.10);
+          border: none;
           display: flex;
           align-items: center;
           justify-content: center;
           flex-shrink: 0;
         }
-        .ci-icon :global(svg) { width: 20px; height: 20px; stroke: var(--terra); }
-        .ci-item .l { font-size: 11px; color: var(--mute2); margin-bottom: 2px; letter-spacing: 0.3px; }
-        .ci-item .v { font-size: 14.5px; font-weight: 600; color: var(--text); }
+        .ci-icon :global(svg) { width: 20px; height: 20px; stroke: var(--amber-soft); }
+        .ci-item .l { font-size: 11px; color: rgba(255,255,255,0.55); margin-bottom: 2px; letter-spacing: 0.3px; }
+        .ci-item .v { font-size: 14.5px; font-weight: 600; color: #fff; }
 
         @media (max-width: 820px) {
           .contact-wrap { grid-template-columns: 1fr; }
-          .contact-info { border-right: none; border-bottom: 1px solid var(--line); padding: 36px 26px; }
+          .contact-info { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 36px 26px; }
         }
       `}</style>
     </section>
