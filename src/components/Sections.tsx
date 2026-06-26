@@ -90,7 +90,7 @@ export function Features() {
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <div className="feat-icon" aria-hidden="true">
-                    <Icon name={r.icone} />
+                    <Icon name={r.icone} className="feat-svg" />
                   </div>
                   <h3>{r.titulo}</h3>
                   <p>{r.desc}</p>
@@ -168,8 +168,9 @@ export function Features() {
         .feat-card:hover .feat-icon {
           transform: scale(1.08) rotate(-4deg);
         }
-        .feat-icon :global(svg) {
-          width: 28px; height: 28px;
+        .feat-svg {
+          width: 28px;
+          height: 28px;
           stroke: var(--terra-dark);
           fill: none;
           stroke-width: 2;
@@ -420,14 +421,14 @@ export function Audience() {
               <Reveal delay={i * 100}>
                 <div className={`aud-card ${p.tipo}`} data-hover>
                   <div className="ic" aria-hidden="true">
-                    <Icon name={p.tipo === "own" ? "car" : "truck"} />
+                    <Icon name={p.tipo === "own" ? "car" : "truck"} className="ic-svg" />
                   </div>
                   <h3>{p.titulo}</h3>
                   <p>{p.desc}</p>
                   <ul>
                     {p.itens.map((it) => (
                       <li key={it}>
-                        <Icon name="check" aria-hidden="true" />
+                        <Icon name="check" aria-hidden="true" className="chk-ic" />
                         {it}
                       </li>
                     ))}
@@ -483,12 +484,12 @@ export function Audience() {
           align-items: center;
           justify-content: center;
           margin-bottom: 24px;
-          color: #fff;
         }
         .aud-card.own   .ic { background: linear-gradient(135deg, var(--terra), var(--terra-dark)); }
         .aud-card.fleet .ic { background: linear-gradient(135deg, var(--amber), var(--mustard));    }
-        .aud-card .ic :global(svg) {
-          width: 32px; height: 32px;
+        .ic-svg {
+          width: 32px;
+          height: 32px;
           stroke: #fff;
           fill: none;
           stroke-width: 2;
@@ -513,14 +514,17 @@ export function Audience() {
           border-bottom: 1px solid var(--line-soft);
         }
         .aud-card li:last-child { border: none; }
-        .aud-card li :global(svg) {
-          width: 17px; height: 17px;
+
+        /* Ícones de checklist — tamanho explícito via className, sem :global() */
+        .chk-ic {
+          width: 17px;
+          height: 17px;
+          flex-shrink: 0;
           stroke-width: 3;
           fill: none;
-          flex-shrink: 0;
         }
-        .aud-card.own   li :global(svg) { stroke: var(--terra); }
-        .aud-card.fleet li :global(svg) { stroke: var(--mustard); }
+        .aud-card.own   .chk-ic { stroke: var(--terra); }
+        .aud-card.fleet .chk-ic { stroke: var(--mustard); }
 
         @media (max-width: 820px) { .aud-grid { grid-template-columns: 1fr; } }
         @media (max-width: 680px) { .aud-card { padding: 30px 24px; } }
