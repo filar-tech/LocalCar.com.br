@@ -50,8 +50,8 @@ export default function Header() {
           <Image
             src="/logo-localcar.png"
             alt="LocalCar - Rastreamento Automotivo"
-            width={52}
-            height={52}
+            width={72}
+            height={72}
             priority
           />
         </Link>
@@ -113,15 +113,18 @@ export default function Header() {
         }
 
         .nav {
-          height: 72px;
+          height: 84px;
           display: flex;
           align-items: center;
           justify-content: space-between;
         }
 
+        .nav-logo {
+          padding: 4px 8px 4px 0;
+        }
         .nav-logo :global(img) {
-          height: 52px;
-          width: 52px;
+          height: 68px;
+          width: 68px;
           object-fit: contain;
           transition: transform 0.3s;
         }
@@ -217,7 +220,7 @@ export default function Header() {
           .nav-links {
             display: none;
             position: absolute;
-            top: 80px;
+            top: 92px;
             left: 16px; right: 16px;
             flex-direction: column;
             gap: 4px;
