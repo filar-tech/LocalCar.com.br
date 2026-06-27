@@ -226,7 +226,7 @@ export default function Hero() {
 
         /* slogan */
         .slogan {
-          font-size: clamp(17px, 2.2vw, 24px);
+          font-size: clamp(16px, 1.8vw, 20px);
           font-weight: 500;
           color: var(--mute);
           margin-bottom: 24px;
@@ -235,8 +235,18 @@ export default function Hero() {
           animation: rise 0.7s ease 0.2s forwards;
         }
         .slogan b {
-          color: var(--terra-dark);
-          font-weight: 600;
+          display: block;
+          font-family: var(--font-fraunces), serif;
+          font-size: clamp(28px, 4vw, 52px);
+          font-weight: 800;
+          font-style: italic;
+          line-height: 1.05;
+          letter-spacing: -0.5px;
+          background: linear-gradient(120deg, var(--terra-dark), var(--amber));
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+          margin-bottom: 8px;
         }
 
         /* lead */
