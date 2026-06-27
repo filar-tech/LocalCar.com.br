@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Reveal from "./Reveal";
 
 const photos = [
@@ -31,9 +30,9 @@ const photos = [
 ];
 
 const videos = [
-  { src: "/faec7a25-0629-4d11-9a97-6aa7edbb404f.mp4",  label: "Instalação rápida e segura"     },
-  { src: "/d66e4edc-9978-487c-bfaa-76093a4f88fc.mp4",  label: "Rastreamento em tempo real"     },
-  { src: "/39424b04-8850-4648-9ec5-c235e1244c79.mp4",  label: "Controle total pelo celular"    },
+  { src: "/faec7a25-0629-4d11-9a97-6aa7edbb404f.mp4", label: "Instalação rápida e segura"  },
+  { src: "/d66e4edc-9978-487c-bfaa-76093a4f88fc.mp4",  label: "Rastreamento em tempo real"  },
+  { src: "/39424b04-8850-4648-9ec5-c235e1244c79.mp4",  label: "Controle total pelo celular" },
 ];
 
 export default function GallerySection() {
@@ -57,13 +56,8 @@ export default function GallerySection() {
           <div className="photo-bento">
             {photos.map((p) => (
               <div key={p.src} className={`photo-item photo-${p.area}`}>
-                <Image
-                  src={p.src}
-                  alt={p.alt}
-                  fill
-                  sizes="(max-width: 820px) 100vw, 50vw"
-                  style={{ objectFit: "cover" }}
-                />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={p.src} alt={p.alt} />
                 <div className="photo-caption">{p.caption}</div>
               </div>
             ))}
@@ -117,8 +111,6 @@ export default function GallerySection() {
           grid-template-rows: 300px 300px;
           gap: 14px;
           margin-bottom: 48px;
-          border-radius: 24px;
-          overflow: hidden;
         }
 
         .photo-item {
@@ -126,6 +118,7 @@ export default function GallerySection() {
           overflow: hidden;
           border-radius: 16px;
           cursor: zoom-in;
+          background: var(--bg);
         }
         .photo-a { grid-area: a; }
         .photo-b { grid-area: b; }
@@ -133,6 +126,10 @@ export default function GallerySection() {
         .photo-d { grid-area: d; }
 
         .photo-item img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
           transition: transform 0.5s ease;
         }
         .photo-item:hover img {
@@ -143,7 +140,7 @@ export default function GallerySection() {
           position: absolute;
           bottom: 0; left: 0; right: 0;
           padding: 28px 18px 14px;
-          background: linear-gradient(to top, rgba(43,35,16,0.72), transparent);
+          background: linear-gradient(to top, rgba(43,35,16,0.75), transparent);
           color: #fff;
           font-size: 13px;
           font-weight: 500;
@@ -178,8 +175,8 @@ export default function GallerySection() {
         .video-player {
           width: 100%;
           display: block;
-          background: #000;
-          max-height: 240px;
+          background: #1a1308;
+          aspect-ratio: 16 / 9;
           object-fit: cover;
         }
 
