@@ -10,6 +10,7 @@ const navItems = [
   { href: "/#recursos", label: "Recursos"       },
   { href: "/#como",     label: "Como funciona"  },
   { href: "/#publico",  label: "Para quem"      },
+  { href: "/#galeria",  label: "Galeria"        },
   { href: "/contato",   label: "Contato"        },
 ];
 
