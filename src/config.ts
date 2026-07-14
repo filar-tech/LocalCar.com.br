@@ -21,9 +21,11 @@ export const site = {
   endereco: {
     rua: "Av. Bacabal, 2630",
     bairro: "Parque Industrial",
+    // TODO: preencher com a cidade real (ex: "São José dos Campos"). Usado no SEO local (JSON-LD).
     cidade: "",
+    // TODO: preencher com o CEP real (ex: "12345-678"). Usado no SEO local (JSON-LD).
     cep: "",
-    // link do Google Maps (cole aqui depois de criar o Google Meu Negócio)
+    // TODO: link do Google Maps (cole aqui depois de criar o Google Meu Negócio)
     mapsUrl: "",
   },
 

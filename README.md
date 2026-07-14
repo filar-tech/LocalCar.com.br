@@ -7,7 +7,7 @@ Site profissional da **LocalCar — Rastreamento Automotivo**, construído em **
 ## ✅ O que já vem pronto
 
 - **4 páginas**: Início, Serviços, Sobre, Contato
-- **Design dark/tech** com radar animado, painel ao vivo e efeitos de luz
+- **Design claro/papel** com paleta terracota + âmbar, cursor customizado, tilt 3D e micro-interações
 - **Formulário que abre direto no WhatsApp** (sem precisar de backend)
 - **SEO otimizado**: metadados, Open Graph, sitemap, robots e dados estruturados (Schema.org `LocalBusiness`) — importante para o Google local
 - **Responsivo** (celular, tablet e desktop)
@@ -24,6 +24,8 @@ Abra o arquivo **`src/config.ts`** e troque:
 | `whatsapp` | Número real no formato `55` + DDD + número (só dígitos). Ex: `5512999998888` |
 | `telefoneExibicao` | Telefone formatado, ex: `(12) 99999-8888` |
 | `instagram` / `instagramUrl` | @ e link reais do Instagram |
+| `endereco.cidade` | Cidade (ainda pendente — ver `TODO` no arquivo) |
+| `endereco.cep` | CEP (ainda pendente — ver `TODO` no arquivo) |
 | `endereco.mapsUrl` | Link do Google Maps (após criar o Google Meu Negócio) |
 | `url` | Domínio final do site, ex: `https://www.localcar.com.br` |
 
@@ -86,22 +88,28 @@ localcar-site/
 │       ├── Header.tsx
 │       ├── Footer.tsx
 │       ├── Hero.tsx
-│       ├── Sections.tsx       ← recursos, como funciona, público
+│       ├── Sections.tsx        ← recursos, como funciona, público
+│       ├── GallerySection.tsx  ← fotos e vídeos do produto
 │       ├── ContactSection.tsx
 │       ├── ContactForm.tsx
 │       ├── WhatsAppFloat.tsx
+│       ├── CustomCursor.tsx
+│       ├── ParticlesBackground.tsx
+│       ├── TiltCard.tsx
+│       ├── Reveal.tsx
+│       ├── ScrollProgress.tsx
 │       └── Icon.tsx
 └── package.json
 ```
 
 ---
 
-## 🎨 Identidade visual
+## 🎨 Identidade visual (V3)
 
-- **Azul marinho** `#0B2A4A` / `#2E9BFF`
-- **Vermelho** `#FF2A20`
-- **Amarelo** `#FFC824`
-- Fontes: **Sora** (textos) + **Chakra Petch** (tech/destaques)
+- **Terracota** `#C45A28` / **Âmbar** `#E0A030`
+- Tema claro em tons de bege/papel (`--bg2`, `--panel`)
+- Fontes: **Fraunces** (serif, títulos) + **Outfit** (sans, textos)
+- Protótipo de referência em `../html/v3-prototipo.html`
 
 ---
 

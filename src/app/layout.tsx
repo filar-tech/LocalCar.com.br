@@ -66,8 +66,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     telephone: site.telefoneExibicao,
     address: {
       "@type": "PostalAddress",
-      streetAddress: site.endereco.rua,
-      addressLocality: site.endereco.bairro,
+      streetAddress: `${site.endereco.rua}, ${site.endereco.bairro}`,
+      addressLocality: site.endereco.cidade,
+      postalCode: site.endereco.cep,
       addressCountry: "BR",
     },
     sameAs: [site.instagramUrl],
