@@ -13,8 +13,8 @@ export default function Footer() {
               <Image
                 src="/logo-localcar.png"
                 alt="LocalCar"
-                width={120}
-                height={50}
+                width={140}
+                height={140}
                 className="foot-logo"
               />
             </div>
@@ -79,14 +79,14 @@ export default function Footer() {
 
         .foot-logo-wrap {
           background: #fff;
-          padding: 10px 16px;
-          border-radius: 14px;
+          padding: 12px 20px;
+          border-radius: 16px;
           display: inline-block;
           margin-bottom: 18px;
         }
 
         .foot-logo {
-          height: 64px;
+          height: 92px;
           width: auto;
           object-fit: contain;
           display: block;
