@@ -55,10 +55,10 @@ export default function CustomCursor() {
         ring.style.width  = size;
         ring.style.height = size;
         ring.style.borderColor = hovered.current
-          ? "var(--terra)"
-          : "rgba(214, 154, 30, 0.45)";
+          ? "var(--red)"
+          : "rgba(0, 40, 100, 0.4)";
         ring.style.backgroundColor = hovered.current
-          ? "rgba(214, 154, 30, 0.06)"
+          ? "rgba(192, 0, 0, 0.06)"
           : "transparent";
       }
 
@@ -97,7 +97,7 @@ export default function CustomCursor() {
           ...base,
           width:      "7px",
           height:     "7px",
-          background: "var(--terra)",
+          background: "var(--navy)",
         }}
       />
       <div
@@ -107,7 +107,7 @@ export default function CustomCursor() {
           ...base,
           width:      "32px",
           height:     "32px",
-          border:     "1.5px solid rgba(214, 154, 30, 0.45)",
+          border:     "1.5px solid rgba(0, 40, 100, 0.4)",
           transition: "width 0.25s ease, height 0.25s ease, border-color 0.25s ease, background-color 0.25s ease, opacity 0.3s",
         }}
       />

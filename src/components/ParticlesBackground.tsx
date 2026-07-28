@@ -11,9 +11,9 @@ interface Particle {
 }
 
 const COLORS = [
-  "rgba(214,154,30,",
-  "rgba(232,185,46,",
-  "rgba(224,169,28,",
+  "rgba(0,40,100,",
+  "rgba(192,0,0,",
+  "rgba(255,226,33,",
 ];
 
 export default function ParticlesBackground() {
@@ -60,7 +60,7 @@ export default function ParticlesBackground() {
           const dist = Math.sqrt(dx * dx + dy * dy);
           if (dist < 120) {
             ctx!.beginPath();
-            ctx!.strokeStyle = `rgba(214,154,30,${0.09 * (1 - dist / 120)})`;
+            ctx!.strokeStyle = `rgba(0,40,100,${0.09 * (1 - dist / 120)})`;
             ctx!.lineWidth   = 0.7;
             ctx!.moveTo(particles[i].x, particles[i].y);
             ctx!.lineTo(particles[j].x, particles[j].y);

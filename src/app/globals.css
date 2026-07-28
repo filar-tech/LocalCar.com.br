@@ -1,36 +1,42 @@
 /* ===================================================================
-   LOCALCAR — V3 LIGHT THEME  (papel · mostarda-dourada · âmbar)
+   LOCALCAR — IDENTIDADE OFICIAL  (azul · vermelho · amarelo)
    CSS variables centralizadas. Edite aqui para propagar em todo o site.
    =================================================================== */
 
 :root {
-  /* Backgrounds */
-  --bg:     #F6F1E4;
-  --bg2:    #EEE6D2;
-  --paper:  #FCFAF3;
-  --panel:  #FCFAF3;
-  --panel2: #EEE6D2;
+  /* Marca — cores principais (extraídas do logo oficial) */
+  --navy:   #002864;   /* "LOCAL" */
+  --red:    #C00000;   /* "CAR" */
+  --yellow: #FFE221;   /* amarelo oficial */
 
-  /* Brand palette — mostarda dourada */
-  --terra:       #D69A1E;   /* mostarda dourada (cor principal) */
-  --terra-dark:  #B07D12;   /* dourado escuro */
-  --amber:       #E8B92E;
-  --mustard:     #E0A91C;
-  --amber-soft:  #F2D472;
+  /* Tons de apoio */
+  --navy-dark:    #001B45;
+  --navy-mid:     #0A3D82;
+  --red-vivid:    #D40800;
+  --red-dark:     #9A0000;
+  --yellow-closed:#F5CE00;
+  --yellow-light: #FFF3A8;
 
-  /* Text */
-  --text:  #2B2310;
-  --mute:  #6E6347;
-  --mute2: #9A8878;
+  /* Texto e fundo */
+  --text:  #12203A;
+  --mute:  #5E6E86;
+  --mute2: #8A97AC;
+  --border:#E9EDF3;
+  --bg:    #FFFFFF;
+  --bg2:   #F4F6FA;
+  --panel: #FFFFFF;
+  --panel2:#F4F6FA;
 
-  /* Lines & shadows */
-  --line:      rgba(43, 35, 16, 0.12);
-  --line-soft: rgba(43, 35, 16, 0.07);
-  --shadow:    rgba(150, 110, 20, 0.16);
+  /* Linhas & sombras (derivadas do azul institucional) */
+  --line:      var(--border);
+  --line-soft: rgba(18, 32, 58, 0.07);
+  --shadow:    rgba(0, 40, 100, 0.14);
+  --shadow-soft: rgba(0, 40, 100, 0.08);
 
-  /* Glow helpers */
-  --terra-glow: rgba(214, 154, 30, 0.22);
-  --amber-glow: rgba(232, 185, 46, 0.28);
+  /* Glows auxiliares */
+  --navy-glow:   rgba(0, 40, 100, 0.22);
+  --red-glow:    rgba(192, 0, 0, 0.24);
+  --yellow-glow: rgba(255, 226, 33, 0.30);
 }
 
 /* ---- Reset ---- */
@@ -39,7 +45,7 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: var(--font-outfit), 'Outfit', system-ui, sans-serif;
+  font-family: var(--font-inter), 'Inter', system-ui, sans-serif;
   background: var(--bg);
   color: var(--text);
   overflow-x: hidden;
@@ -47,6 +53,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   cursor: none;
+  position: relative;
 }
 
 /* Restaura cursor em touch/mobile */
@@ -54,18 +61,22 @@ body {
   body { cursor: auto; }
 }
 
-/* Textura de papel (grain) */
-body::after {
+/* Marca d'água de fundo — padrão oficial LocalCar */
+body::before {
   content: '';
   position: fixed;
   inset: 0;
-  z-index: 9990;
+  z-index: 0;
   pointer-events: none;
-  opacity: 0.5;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  background-image: url('/localcar_padrao_tile.png');
+  background-repeat: repeat;
+  background-size: 340px auto;
+}
+@media (max-width: 980px) {
+  body::before { background-size: 230px auto; }
 }
 
-::selection { background: var(--terra); color: #fff; }
+::selection { background: var(--navy); color: #fff; }
 
 a { color: inherit; text-decoration: none; }
 ul { list-style: none; }
@@ -75,11 +86,16 @@ ul { list-style: none; }
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 32px;
+  position: relative;
+  z-index: 2;
+}
+
+header, main, footer, section {
+  position: relative;
+  z-index: 2;
 }
 
 section {
-  position: relative;
-  z-index: 2;
   scroll-margin-top: 90px;
 }
 
@@ -92,8 +108,8 @@ section {
 
 .sec-tag {
   display: inline-block;
-  color: var(--terra);
-  font-family: var(--font-outfit), sans-serif;
+  color: var(--navy);
+  font-family: var(--font-inter), sans-serif;
   font-weight: 600;
   font-size: 12px;
   letter-spacing: 3.5px;
@@ -102,17 +118,18 @@ section {
 }
 
 .sec-title {
-  font-family: var(--font-fraunces), 'Fraunces', Georgia, serif;
+  font-family: var(--font-barlow), 'Barlow Condensed', Arial, sans-serif;
   font-size: clamp(30px, 4.2vw, 52px);
   font-weight: 700;
   line-height: 1.1;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
   color: var(--text);
 }
 
 .sec-title .grad,
 .sec-title .accent {
-  font-style: italic;
-  color: var(--terra);
+  color: var(--red);
 }
 
 .sec-sub {
@@ -120,16 +137,18 @@ section {
   font-size: 17px;
   margin-top: 18px;
   line-height: 1.72;
+  text-transform: none;
+  font-family: var(--font-inter), sans-serif;
 }
 
-/* ---- Buttons — estilo V3 pill ---- */
+/* ---- Buttons ---- */
 .btn {
   display: inline-flex;
   align-items: center;
   gap: 10px;
   padding: 15px 28px;
   border-radius: 50px;
-  font-family: var(--font-outfit), sans-serif;
+  font-family: var(--font-inter), sans-serif;
   font-weight: 600;
   font-size: 15.5px;
   cursor: pointer;
@@ -139,24 +158,24 @@ section {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--terra), var(--mustard));
+  background: linear-gradient(135deg, var(--red), var(--red-vivid));
   color: #fff;
-  box-shadow: 0 10px 26px rgba(214, 154, 30, 0.32);
+  box-shadow: 0 10px 26px var(--red-glow);
 }
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 16px 36px rgba(214, 154, 30, 0.44);
+  box-shadow: 0 16px 36px var(--red-glow);
 }
 
 .btn-ghost {
   background: transparent;
   color: var(--text);
-  border: 1.5px solid var(--line);
+  border: 1.5px solid var(--border);
 }
 .btn-ghost:hover {
   transform: translateY(-3px);
-  border-color: var(--terra);
-  color: var(--terra-dark);
+  border-color: var(--navy);
+  color: var(--navy);
 }
 
 /* ---- Page hero (páginas internas) ---- */
@@ -166,20 +185,21 @@ section {
   position: relative;
   overflow: hidden;
   background: linear-gradient(180deg, var(--bg2) 0%, var(--bg) 100%);
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--border);
 }
 
 .page-hero h1 {
-  font-family: var(--font-fraunces), serif;
+  font-family: var(--font-barlow), sans-serif;
   font-size: clamp(36px, 5.5vw, 62px);
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.1;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
   color: var(--text);
 }
 
 .page-hero h1 .grad {
-  font-style: italic;
-  color: var(--terra);
+  color: var(--red);
 }
 
 .page-hero p {
@@ -199,7 +219,7 @@ section {
 @keyframes rise { to { opacity: 1; transform: translateY(0); } }
 
 @keyframes pulse {
-  0%   { box-shadow: 0 0 0 0   var(--terra-glow); }
+  0%   { box-shadow: 0 0 0 0   var(--red-glow); }
   70%  { box-shadow: 0 0 0 8px transparent;        }
   100% { box-shadow: 0 0 0 0   transparent;        }
 }
@@ -217,14 +237,14 @@ section {
 
 /* ---- Accessibility ---- */
 :focus-visible {
-  outline: 2.5px solid var(--terra);
+  outline: 2.5px solid var(--navy);
   outline-offset: 3px;
   border-radius: 4px;
 }
 
 /* ---- tech class ---- */
 .tech {
-  font-family: var(--font-outfit), sans-serif;
+  font-family: var(--font-barlow), sans-serif;
   font-weight: 700;
   letter-spacing: -0.5px;
 }

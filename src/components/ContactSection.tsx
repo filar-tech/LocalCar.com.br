@@ -2,6 +2,7 @@ import { site } from "@/config";
 import Icon from "./Icon";
 import ContactForm from "./ContactForm";
 import Reveal from "./Reveal";
+import { BrandName } from "./BrandName";
 
 export default function ContactSection() {
   return (
@@ -11,7 +12,7 @@ export default function ContactSection() {
           <div className="contact-wrap">
             {/* Info */}
             <div className="contact-info">
-              <h2>Fale com a<br />LocalCar</h2>
+              <h2>Fale com a<br /><BrandName light /></h2>
               <p>
                 Pronto para o controle total do seu veículo? Proteja seu patrimônio hoje mesmo.
               </p>
@@ -75,13 +76,13 @@ export default function ContactSection() {
           border: 1px solid var(--line-soft);
           border-radius: 28px;
           overflow: hidden;
-          background: var(--paper);
+          background: var(--panel);
           box-shadow: 0 30px 60px var(--shadow);
         }
 
         .contact-info {
           padding: 54px 46px;
-          background: linear-gradient(160deg, #2A2018, #3A2A1C);
+          background: linear-gradient(160deg, var(--navy-dark), var(--navy));
           border-right: 1px solid var(--line);
           position: relative;
           overflow: hidden;
@@ -92,19 +93,21 @@ export default function ContactSection() {
           position: absolute;
           bottom: -60px; right: -60px;
           width: 240px; height: 240px;
-          background: radial-gradient(circle, rgba(224,160,48,0.3), transparent 70%);
+          background: radial-gradient(circle, rgba(255,226,33,0.22), transparent 70%);
           filter: blur(30px);
         }
 
         .contact-info h2 {
-          font-family: var(--font-fraunces), serif;
-          font-size: 36px;
-          font-weight: 700;
+          font-family: var(--font-barlow), sans-serif;
+          font-size: 38px;
+          font-weight: 800;
+          text-transform: uppercase;
           line-height: 1.1;
           margin-bottom: 14px;
           color: #fff;
           position: relative;
         }
+        .contact-info h2 .brand { font-weight: 800; }
         .contact-info > p {
           color: rgba(255,255,255,0.7);
           font-size: 15px;
@@ -129,7 +132,7 @@ export default function ContactSection() {
           justify-content: center;
           flex-shrink: 0;
         }
-        .ci-icon :global(svg) { width: 21px; height: 21px; stroke: var(--amber-soft); }
+        .ci-icon :global(svg) { width: 21px; height: 21px; stroke: var(--yellow-light); }
         .ci-item .l { font-size: 12px; color: rgba(255,255,255,0.55); margin-bottom: 2px; letter-spacing: 0.3px; }
         .ci-item .v { font-size: 15px; font-weight: 600; color: #fff; }
 

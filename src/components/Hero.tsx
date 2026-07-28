@@ -139,7 +139,7 @@ export default function Hero() {
           align-items: center;
           overflow: hidden;
           background:
-            radial-gradient(ellipse 70% 60% at 78% 35%, rgba(224,160,48,0.16), transparent 60%),
+            radial-gradient(ellipse 70% 60% at 78% 35%, rgba(255,226,33,0.14), transparent 60%),
             var(--bg);
         }
 
@@ -154,13 +154,13 @@ export default function Hero() {
         }
         .hero-blob.b1 {
           width: 480px; height: 480px;
-          background: radial-gradient(circle, rgba(196,90,40,0.30), transparent 70%);
+          background: radial-gradient(circle, rgba(0,40,100,0.16), transparent 70%);
           top: -100px; right: -80px;
           animation: drift 14s ease-in-out infinite;
         }
         .hero-blob.b2 {
           width: 360px; height: 360px;
-          background: radial-gradient(circle, rgba(224,160,48,0.28), transparent 70%);
+          background: radial-gradient(circle, rgba(255,226,33,0.24), transparent 70%);
           bottom: -60px; left: -60px;
           animation: drift 18s ease-in-out infinite reverse;
         }
@@ -182,9 +182,9 @@ export default function Hero() {
           display: inline-flex;
           align-items: center;
           gap: 10px;
-          background: rgba(196,90,40,0.08);
-          border: 1px solid rgba(196,90,40,0.25);
-          color: var(--terra-dark);
+          background: rgba(0,40,100,0.06);
+          border: 1px solid rgba(0,40,100,0.22);
+          color: var(--navy-dark);
           font-weight: 600;
           font-size: 12px;
           letter-spacing: 1.5px;
@@ -198,18 +198,19 @@ export default function Hero() {
         }
         .dot {
           width: 7px; height: 7px;
-          background: var(--terra);
+          background: var(--red);
           border-radius: 50%;
           animation: pulse 2s infinite;
         }
 
         /* heading */
         .hero-text h1 {
-          font-family: var(--font-fraunces), serif;
+          font-family: var(--font-barlow), sans-serif;
           font-size: clamp(42px, 6vw, 82px);
-          font-weight: 900;
+          font-weight: 800;
           line-height: 0.98;
-          letter-spacing: -1.5px;
+          letter-spacing: 0;
+          text-transform: uppercase;
           color: var(--text);
           margin-bottom: 18px;
           opacity: 0;
@@ -217,11 +218,10 @@ export default function Hero() {
           animation: rise 0.7s ease 0.1s forwards;
         }
         .hero-text h1 .accent {
-          background: linear-gradient(120deg, var(--terra), var(--amber));
+          background: linear-gradient(120deg, var(--navy), var(--red));
           -webkit-background-clip: text;
           background-clip: text;
           -webkit-text-fill-color: transparent;
-          font-style: italic;
         }
 
         /* slogan */
@@ -236,13 +236,13 @@ export default function Hero() {
         }
         .slogan b {
           display: block;
-          font-family: var(--font-fraunces), serif;
+          font-family: var(--font-barlow), sans-serif;
           font-size: clamp(28px, 4vw, 52px);
           font-weight: 800;
-          font-style: italic;
+          text-transform: uppercase;
           line-height: 1.05;
-          letter-spacing: -0.5px;
-          background: linear-gradient(120deg, var(--terra-dark), var(--amber));
+          letter-spacing: 0.2px;
+          background: linear-gradient(120deg, var(--red), var(--yellow-closed));
           -webkit-background-clip: text;
           background-clip: text;
           -webkit-text-fill-color: transparent;
@@ -285,10 +285,10 @@ export default function Hero() {
           background: var(--line);
         }
         .hero-stat .num {
-          font-family: var(--font-fraunces), serif;
+          font-family: var(--font-barlow), sans-serif;
           font-size: 38px;
           font-weight: 700;
-          color: var(--terra-dark);
+          color: var(--navy-dark);
           line-height: 1;
         }
         .hero-stat .lbl {
@@ -309,11 +309,11 @@ export default function Hero() {
         /* Float tags */
         .float-tag {
           position: absolute;
-          background: var(--paper);
+          background: var(--panel);
           border: 1px solid var(--line-soft);
           border-radius: 14px;
           padding: 10px 14px;
-          box-shadow: 0 14px 30px rgba(120,72,30,0.18);
+          box-shadow: 0 14px 30px rgba(0,40,100,0.16);
           display: flex;
           align-items: center;
           gap: 9px;
@@ -331,8 +331,8 @@ export default function Hero() {
           justify-content: center;
           flex-shrink: 0;
         }
-        .ico-pin  { background: linear-gradient(135deg, var(--terra), var(--mustard)); }
-        .ico-lock { background: linear-gradient(135deg, var(--amber), var(--mustard)); }
+        .ico-pin  { background: linear-gradient(135deg, var(--navy), var(--navy-mid)); }
+        .ico-lock { background: linear-gradient(135deg, var(--red), var(--red-vivid)); }
         .float-tag.t1 { top: 30px; left: -46px; animation: floaty 4s ease-in-out infinite; }
         .float-tag.t2 { bottom: 50px; right: -40px; animation: floaty 5s ease-in-out infinite 0.6s; }
         @keyframes floaty {
@@ -343,10 +343,10 @@ export default function Hero() {
         /* Device */
         .device {
           width: 300px;
-          background: var(--paper);
+          background: var(--panel);
           border-radius: 30px;
           padding: 20px;
-          box-shadow: 0 40px 80px rgba(120,72,30,0.25), 0 0 0 1px var(--line-soft);
+          box-shadow: 0 40px 80px rgba(0,40,100,0.22), 0 0 0 1px var(--line-soft);
         }
         .device-screen {
           background: linear-gradient(165deg, #fff, var(--bg2));
@@ -387,9 +387,9 @@ export default function Hero() {
           height: 200px;
           position: relative;
           background:
-            linear-gradient(rgba(196,90,40,0.06) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(196,90,40,0.06) 1px, transparent 1px),
-            linear-gradient(135deg, #F6EEDF, #EFE3CE);
+            linear-gradient(rgba(0,40,100,0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0,40,100,0.05) 1px, transparent 1px),
+            linear-gradient(135deg, #F7F9FC, #EEF2F7);
           background-size: 24px 24px, 24px 24px, 100% 100%;
         }
         .ds-route {
@@ -399,7 +399,7 @@ export default function Hero() {
         }
         .ds-route path {
           fill: none;
-          stroke: var(--terra);
+          stroke: var(--navy);
           stroke-width: 3;
           stroke-linecap: round;
           stroke-dasharray: 6 8;
@@ -421,8 +421,8 @@ export default function Hero() {
           background: #fff;
           border-radius: 50%;
         }
-        .ds-pin.s { background: var(--amber); top: 60%; left: 20%; }
-        .ds-pin.e { background: var(--terra); top: 25%; right: 20%; animation: bob 1.8s ease-in-out infinite; }
+        .ds-pin.s { background: var(--yellow); top: 60%; left: 20%; }
+        .ds-pin.e { background: var(--red); top: 25%; right: 20%; animation: bob 1.8s ease-in-out infinite; }
         @keyframes bob {
           0%, 100% { transform: rotate(-45deg) translateY(0);   }
           50%       { transform: rotate(-45deg) translateY(-7px); }

@@ -96,7 +96,7 @@ export default function GallerySection() {
           top: 10%; left: 50%;
           transform: translateX(-50%);
           width: 700px; height: 400px;
-          background: radial-gradient(ellipse, rgba(214,154,30,0.06), transparent 70%);
+          background: radial-gradient(ellipse, rgba(0,40,100,0.05), transparent 70%);
           filter: blur(60px);
           pointer-events: none;
         }
@@ -140,7 +140,7 @@ export default function GallerySection() {
           position: absolute;
           bottom: 0; left: 0; right: 0;
           padding: 28px 18px 14px;
-          background: linear-gradient(to top, rgba(43,35,16,0.75), transparent);
+          background: linear-gradient(to top, rgba(18,32,58,0.78), transparent);
           color: #fff;
           font-size: 13px;
           font-weight: 500;
@@ -160,7 +160,7 @@ export default function GallerySection() {
         }
 
         .video-wrap {
-          background: var(--paper);
+          background: var(--panel);
           border: 1px solid var(--line-soft);
           border-radius: 20px;
           overflow: hidden;
@@ -175,7 +175,7 @@ export default function GallerySection() {
         .video-player {
           width: 100%;
           display: block;
-          background: #1a1308;
+          background: var(--navy-dark);
           aspect-ratio: 16 / 9;
           object-fit: cover;
         }
@@ -186,7 +186,7 @@ export default function GallerySection() {
           font-weight: 600;
           color: var(--text);
           text-align: center;
-          font-family: var(--font-outfit), sans-serif;
+          font-family: var(--font-inter), sans-serif;
         }
 
         /* ---- Responsivo ---- */

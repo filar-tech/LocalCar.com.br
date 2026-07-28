@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Outfit } from "next/font/google";
+import { Barlow_Condensed, Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -8,29 +8,28 @@ import CustomCursor from "@/components/CustomCursor";
 import ScrollProgress from "@/components/ScrollProgress";
 import { site } from "@/config";
 
-const fraunces = Fraunces({
+const barlow = Barlow_Condensed({
   subsets: ["latin"],
-  variable: "--font-fraunces",
+  variable: "--font-barlow",
   display: "swap",
-  style: ["normal", "italic"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["600", "700", "800"],
 });
 
-const outfit = Outfit({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-outfit",
+  variable: "--font-inter",
   display: "swap",
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "LocalCar — Rastreamento Automotivo | Você no Controle do Seu Carro",
+    default: "LocalCar — Rastreamento Automotivo em São José dos Campos | Você no Controle do Seu Carro",
     template: "%s | LocalCar",
   },
   description:
-    "Rastreamento veicular 24h com tecnologia de ponta. Bloqueio remoto, localização em tempo real, cerca virtual e estatísticas pelo app. Para você e para sua frota.",
+    "Rastreamento veicular 24h em São José dos Campos com tecnologia de ponta. Bloqueio remoto, localização em tempo real, cerca virtual e estatísticas pelo app. Para você e para sua frota.",
   keywords: [
     "rastreamento veicular",
     "rastreador de carro",
@@ -39,6 +38,7 @@ export const metadata: Metadata = {
     "segurança veicular",
     "rastreador GPS carro",
     "gestão de frotas",
+    "rastreamento veicular São José dos Campos",
     "LocalCar",
   ],
   authors: [{ name: "LocalCar" }],
@@ -47,9 +47,9 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     url: site.url,
     siteName: "LocalCar",
-    title: "LocalCar — Rastreamento Automotivo",
+    title: "LocalCar — Rastreamento Automotivo em São José dos Campos",
     description:
-      "Proteção veicular 24h. Rastreamento em tempo real, bloqueio remoto e controle total pelo app.",
+      "Proteção veicular 24h em São José dos Campos. Rastreamento em tempo real, bloqueio remoto e controle total pelo app.",
   },
   robots: { index: true, follow: true },
 };
@@ -68,6 +68,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       "@type": "PostalAddress",
       streetAddress: `${site.endereco.rua}, ${site.endereco.bairro}`,
       addressLocality: site.endereco.cidade,
+      addressRegion: site.endereco.estado,
       postalCode: site.endereco.cep,
       addressCountry: "BR",
     },
@@ -75,7 +76,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   };
 
   return (
-    <html lang="pt-BR" className={`${fraunces.variable} ${outfit.variable}`}>
+    <html lang="pt-BR" className={`${barlow.variable} ${inter.variable}`}>
       <body>
         <script
           type="application/ld+json"

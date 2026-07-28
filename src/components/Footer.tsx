@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { site } from "@/config";
+import { BrandName } from "./BrandName";
 
 export default function Footer() {
   return (
@@ -54,14 +55,14 @@ export default function Footer() {
         </div>
 
         <div className="foot-bottom">
-          <span>© {new Date().getFullYear()} LocalCar — Rastreamento Automotivo. Todos os direitos reservados.</span>
+          <span>© {new Date().getFullYear()} <BrandName light /> — Rastreamento Automotivo. Todos os direitos reservados.</span>
           <span>Clube de Vantagens · Parceiro MR Car</span>
         </div>
       </div>
 
       <style>{`
         .site-footer {
-          background: #2A2018;
+          background: var(--navy-dark);
           padding: 60px 0 28px;
           color: #fff;
           position: relative;
@@ -99,11 +100,13 @@ export default function Footer() {
         }
 
         .foot-col h4 {
-          font-family: var(--font-fraunces), serif;
-          font-size: 17px;
-          font-weight: 600;
+          font-family: var(--font-barlow), sans-serif;
+          font-size: 18px;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.4px;
           margin-bottom: 16px;
-          color: var(--amber-soft);
+          color: var(--yellow-light);
         }
 
         .foot-col li {
@@ -116,7 +119,7 @@ export default function Footer() {
           color: rgba(255,255,255,0.65);
           transition: color 0.2s;
         }
-        .foot-col a:hover { color: var(--amber-soft); }
+        .foot-col a:hover { color: var(--yellow-light); }
 
         .foot-bottom {
           padding-top: 24px;

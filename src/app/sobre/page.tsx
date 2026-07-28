@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Icon from "@/components/Icon";
 import ContactSection from "@/components/ContactSection";
 import Reveal from "@/components/Reveal";
+import { BrandName } from "@/components/BrandName";
 
 export const metadata: Metadata = {
   title: "Sobre",
@@ -44,7 +45,7 @@ export default function SobrePage() {
               <div className="about-text">
                 <h2>Quem somos</h2>
                 <p>
-                  A <strong>LocalCar</strong> é especializada em rastreamento automotivo,
+                  A <strong><BrandName /></strong> é especializada em rastreamento automotivo,
                   oferecendo soluções completas de segurança veicular para donos de
                   veículos e empresas com frota.
                 </p>
@@ -120,9 +121,10 @@ export default function SobrePage() {
         }
 
         .about-text h2 {
-          font-family: var(--font-fraunces), serif;
-          font-size: 30px;
-          font-weight: 700;
+          font-family: var(--font-barlow), sans-serif;
+          font-size: 32px;
+          font-weight: 800;
+          text-transform: uppercase;
           margin-bottom: 20px;
           color: var(--text);
         }
@@ -132,7 +134,7 @@ export default function SobrePage() {
           margin-bottom: 16px;
           line-height: 1.75;
         }
-        .about-text strong { color: var(--terra); font-weight: 700; }
+        .about-text strong { font-weight: 700; }
 
         .about-card {
           background: var(--panel);
@@ -142,7 +144,7 @@ export default function SobrePage() {
           display: grid;
           grid-template-columns: 1fr 1fr;
           gap: 12px;
-          box-shadow: 0 8px 28px rgba(42,32,24,0.07);
+          box-shadow: 0 8px 28px rgba(0,40,100,0.07);
         }
         .ac-stat {
           background: var(--bg2);
@@ -152,10 +154,10 @@ export default function SobrePage() {
           text-align: center;
         }
         .ac-stat .num {
-          font-family: var(--font-fraunces), serif;
+          font-family: var(--font-barlow), sans-serif;
           font-size: 30px;
           font-weight: 700;
-          color: var(--terra);
+          color: var(--navy);
           line-height: 1;
         }
         .ac-stat .lbl {
@@ -181,14 +183,14 @@ export default function SobrePage() {
           height: 100%;
         }
         .val-card:hover {
-          border-color: rgba(196,90,40,0.26);
-          box-shadow: 0 8px 24px rgba(42,32,24,0.07);
+          border-color: rgba(0,40,100,0.22);
+          box-shadow: 0 8px 24px rgba(0,40,100,0.07);
         }
         .val-icon {
           width: 52px; height: 52px;
           border-radius: 14px;
-          background: rgba(196,90,40,0.08);
-          border: 1px solid rgba(196,90,40,0.18);
+          background: rgba(0,40,100,0.06);
+          border: 1px solid rgba(0,40,100,0.16);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -196,13 +198,14 @@ export default function SobrePage() {
         }
         .val-icon :global(svg) {
           width: 24px; height: 24px;
-          stroke: var(--terra);
+          stroke: var(--navy);
           stroke-width: 2;
         }
         .val-card h3 {
-          font-family: var(--font-fraunces), serif;
-          font-size: 17px;
+          font-family: var(--font-barlow), sans-serif;
+          font-size: 18px;
           font-weight: 700;
+          text-transform: uppercase;
           margin-bottom: 8px;
           color: var(--text);
         }

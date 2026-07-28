@@ -82,9 +82,10 @@ export default function ContactForm() {
         .contact-form { padding: 54px 46px; }
 
         .contact-form h3 {
-          font-family: var(--font-fraunces), serif;
-          font-size: 26px;
-          font-weight: 600;
+          font-family: var(--font-barlow), sans-serif;
+          font-size: 27px;
+          font-weight: 700;
+          text-transform: uppercase;
           margin-bottom: 6px;
           color: var(--text);
         }
@@ -114,7 +115,7 @@ export default function ContactForm() {
           background: var(--bg);
           border: 1.5px solid var(--line-soft);
           border-radius: 12px;
-          font-family: var(--font-outfit), sans-serif;
+          font-family: var(--font-inter), sans-serif;
           font-size: 15px;
           color: var(--text);
           transition: border-color 0.2s, box-shadow 0.2s;
@@ -126,8 +127,8 @@ export default function ContactForm() {
         .field input:focus,
         .field select:focus,
         .field textarea:focus {
-          border-color: var(--terra);
-          box-shadow: 0 0 0 3px rgba(214, 154, 30, 0.12);
+          border-color: var(--navy);
+          box-shadow: 0 0 0 3px rgba(0, 40, 100, 0.12);
         }
 
         .field select {
@@ -142,12 +143,12 @@ export default function ContactForm() {
 
         .form-btn {
           width: 100%;
-          background: linear-gradient(135deg, var(--terra), var(--mustard));
+          background: linear-gradient(135deg, var(--red), var(--red-vivid));
           color: #fff;
           border: none;
           padding: 16px;
           border-radius: 12px;
-          font-family: var(--font-outfit), sans-serif;
+          font-family: var(--font-inter), sans-serif;
           font-weight: 600;
           font-size: 16px;
           cursor: pointer;
@@ -156,12 +157,12 @@ export default function ContactForm() {
           align-items: center;
           justify-content: center;
           gap: 10px;
-          box-shadow: 0 10px 26px rgba(214, 154, 30, 0.3);
+          box-shadow: 0 10px 26px var(--red-glow);
           margin-top: 4px;
         }
         .form-btn:hover {
           transform: translateY(-2px);
-          box-shadow: 0 16px 36px rgba(214, 154, 30, 0.42);
+          box-shadow: 0 16px 36px var(--red-glow);
         }
         .form-btn :global(svg) { width: 20px; height: 20px; fill: #fff; }
 

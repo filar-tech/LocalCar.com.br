@@ -79,24 +79,25 @@ export default function ServicosPage() {
           height: 100%;
         }
         .serv-card:hover {
-          border-color: rgba(196,90,40,0.28);
-          box-shadow: 0 10px 30px rgba(42,32,24,0.08);
+          border-color: rgba(0,40,100,0.24);
+          box-shadow: 0 10px 30px rgba(0,40,100,0.08);
         }
 
         .serv-num {
           position: absolute;
           top: 26px; right: 28px;
-          font-family: var(--font-fraunces), serif;
+          font-family: var(--font-barlow), sans-serif;
           font-size: 26px;
           font-weight: 700;
-          color: rgba(196,90,40,0.10);
+          color: rgba(0,40,100,0.10);
           letter-spacing: -1px;
         }
 
         .serv-card h3 {
-          font-family: var(--font-fraunces), serif;
-          font-size: 20px;
+          font-family: var(--font-barlow), sans-serif;
+          font-size: 21px;
           font-weight: 700;
+          text-transform: uppercase;
           margin-bottom: 10px;
           color: var(--text);
           max-width: 82%;
@@ -121,7 +122,7 @@ export default function ServicosPage() {
         .serv-card li:last-child { border: none; }
         .serv-card li :global(svg) {
           width: 14px; height: 14px;
-          stroke: var(--terra);
+          stroke: var(--navy);
           stroke-width: 3;
           flex-shrink: 0;
         }

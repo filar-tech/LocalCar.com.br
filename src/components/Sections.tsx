@@ -29,7 +29,7 @@ export function Marquee() {
       </div>
       <style>{`
         .marquee {
-          background: linear-gradient(135deg, var(--terra), var(--mustard));
+          background: linear-gradient(135deg, var(--navy), var(--navy-mid));
           padding: 16px 0;
           overflow: hidden;
           position: relative;
@@ -43,17 +43,18 @@ export function Marquee() {
           width: max-content;
         }
         .mq-item {
-          font-family: var(--font-fraunces), serif;
-          font-style: italic;
-          font-weight: 600;
+          font-family: var(--font-barlow), sans-serif;
+          text-transform: uppercase;
+          font-weight: 700;
           font-size: 19px;
+          letter-spacing: 0.3px;
           color: #fff;
           display: flex;
           align-items: center;
           gap: 13px;
         }
         .mq-star {
-          color: rgba(255,255,255,0.7);
+          color: var(--yellow);
           font-style: normal;
         }
         @keyframes mqScroll { to { transform: translateX(-50%); } }
@@ -108,7 +109,7 @@ export function Features() {
           position: absolute;
           top: 0; right: -5%;
           width: 500px; height: 500px;
-          background: radial-gradient(circle, rgba(214,154,30,0.06), transparent 70%);
+          background: radial-gradient(circle, rgba(0,40,100,0.05), transparent 70%);
           filter: blur(60px);
           pointer-events: none;
         }
@@ -120,7 +121,7 @@ export function Features() {
         }
 
         .feat-card {
-          background: var(--paper);
+          background: var(--panel);
           border: 1px solid var(--line-soft);
           border-radius: 20px;
           padding: 34px 30px;
@@ -135,7 +136,7 @@ export function Features() {
           position: absolute;
           left: 0; top: 0;
           height: 4px; width: 100%;
-          background: linear-gradient(90deg, var(--terra), var(--amber));
+          background: linear-gradient(90deg, var(--red), var(--yellow));
           transform: scaleX(0);
           transform-origin: left;
           transition: transform 0.35s;
@@ -148,17 +149,17 @@ export function Features() {
         .feat-num {
           position: absolute;
           top: 24px; right: 28px;
-          font-family: var(--font-fraunces), serif;
+          font-family: var(--font-barlow), sans-serif;
           font-size: 34px;
           font-weight: 700;
-          color: rgba(196,90,40,0.10);
+          color: rgba(0,40,100,0.10);
           line-height: 1;
         }
 
         .feat-icon {
           width: 58px; height: 58px;
           border-radius: 16px;
-          background: linear-gradient(135deg, rgba(232,185,46,0.18), rgba(214,154,30,0.14));
+          background: linear-gradient(135deg, rgba(255,226,33,0.24), rgba(255,226,33,0.12));
           display: flex;
           align-items: center;
           justify-content: center;
@@ -171,15 +172,16 @@ export function Features() {
         .feat-svg {
           width: 28px;
           height: 28px;
-          stroke: var(--terra-dark);
+          stroke: var(--navy-dark);
           fill: none;
           stroke-width: 2;
         }
 
         .feat-card h3 {
-          font-family: var(--font-fraunces), serif;
-          font-size: 21px;
-          font-weight: 600;
+          font-family: var(--font-barlow), sans-serif;
+          font-size: 22px;
+          font-weight: 700;
+          text-transform: uppercase;
           margin-bottom: 9px;
           color: var(--text);
         }
@@ -285,7 +287,7 @@ export function HowItWorks() {
           position: relative;
         }
         .how-item:hover {
-          background: var(--paper);
+          background: var(--panel);
           box-shadow: 0 14px 34px var(--shadow);
         }
 
@@ -293,21 +295,22 @@ export function HowItWorks() {
           flex-shrink: 0;
           width: 46px; height: 46px;
           border-radius: 13px;
-          background: linear-gradient(135deg, var(--terra), var(--mustard));
+          background: linear-gradient(135deg, var(--navy), var(--navy-mid));
           color: #fff;
           display: flex;
           align-items: center;
           justify-content: center;
-          font-family: var(--font-fraunces), serif;
+          font-family: var(--font-barlow), sans-serif;
           font-weight: 700;
           font-size: 19px;
-          box-shadow: 0 8px 20px rgba(196,90,40,0.3);
+          box-shadow: 0 8px 20px var(--navy-glow);
         }
 
         .how-item h4 {
-          font-family: var(--font-fraunces), serif;
-          font-size: 19px;
-          font-weight: 600;
+          font-family: var(--font-barlow), sans-serif;
+          font-size: 20px;
+          font-weight: 700;
+          text-transform: uppercase;
           margin-bottom: 3px;
           color: var(--text);
         }
@@ -322,7 +325,7 @@ export function HowItWorks() {
 
         /* Ring card */
         .how-card {
-          background: var(--paper);
+          background: var(--panel);
           border: 1px solid var(--line-soft);
           border-radius: 24px;
           padding: 36px;
@@ -340,28 +343,28 @@ export function HowItWorks() {
           display: flex;
           align-items: center;
           justify-content: center;
-          background: conic-gradient(var(--terra) 0deg, var(--amber) 220deg, var(--line-soft) 220deg);
+          background: conic-gradient(var(--red) 0deg, var(--yellow) 220deg, var(--line-soft) 220deg);
         }
         .hc-ring::before {
           content: '';
           position: absolute;
           inset: 14px;
-          background: var(--paper);
+          background: var(--panel);
           border-radius: 50%;
         }
 
         .hc-ring-val {
           position: relative;
-          font-family: var(--font-fraunces), serif;
+          font-family: var(--font-barlow), sans-serif;
           font-size: 34px;
           font-weight: 700;
-          color: var(--terra-dark);
+          color: var(--navy-dark);
           text-align: center;
           line-height: 1;
         }
         .hc-ring-val small {
           display: block;
-          font-family: var(--font-outfit), sans-serif;
+          font-family: var(--font-inter), sans-serif;
           font-size: 11px;
           font-weight: 400;
           color: var(--mute);
@@ -380,10 +383,10 @@ export function HowItWorks() {
           text-align: center;
         }
         .hc-stat .v {
-          font-family: var(--font-fraunces), serif;
-          font-size: 22px;
+          font-family: var(--font-barlow), sans-serif;
+          font-size: 23px;
           font-weight: 700;
-          color: var(--terra-dark);
+          color: var(--navy-dark);
         }
         .hc-stat .l {
           font-size: 11px;
@@ -459,7 +462,7 @@ export function Audience() {
           position: absolute;
           bottom: 0; left: 5%;
           width: 600px; height: 600px;
-          background: radial-gradient(circle, rgba(232,185,46,0.06), transparent 70%);
+          background: radial-gradient(circle, rgba(255,226,33,0.10), transparent 70%);
           filter: blur(70px);
           pointer-events: none;
         }
@@ -471,7 +474,7 @@ export function Audience() {
         }
 
         .aud-card {
-          background: var(--paper);
+          background: var(--panel);
           border: 1px solid var(--line-soft);
           border-radius: 24px;
           padding: 44px 40px;
@@ -493,10 +496,10 @@ export function Audience() {
           justify-content: center;
           margin-bottom: 24px;
         }
-        .aud-card.own   .ic { background: linear-gradient(135deg, var(--terra), var(--terra-dark)); }
-        .aud-card.fleet .ic { background: linear-gradient(135deg, var(--amber), var(--mustard));    }
-        .aud-card.moto  .ic { background: linear-gradient(135deg, #B07D12, #7A550C);               }
-        .aud-card.bike  .ic { background: linear-gradient(135deg, var(--mustard), var(--amber-soft)); }
+        .aud-card.own   .ic { background: linear-gradient(135deg, var(--navy), var(--navy-dark));    }
+        .aud-card.fleet .ic { background: linear-gradient(135deg, var(--yellow), var(--yellow-closed)); }
+        .aud-card.moto  .ic { background: linear-gradient(135deg, var(--red), var(--red-dark));      }
+        .aud-card.bike  .ic { background: linear-gradient(135deg, var(--yellow-closed), var(--yellow-light)); }
         .ic-svg {
           width: 32px;
           height: 32px;
@@ -504,11 +507,14 @@ export function Audience() {
           fill: none;
           stroke-width: 2;
         }
+        .aud-card.fleet .ic-svg,
+        .aud-card.bike  .ic-svg { stroke: var(--navy-dark); }
 
         .aud-card h3 {
-          font-family: var(--font-fraunces), serif;
-          font-size: 27px;
+          font-family: var(--font-barlow), sans-serif;
+          font-size: 28px;
           font-weight: 700;
+          text-transform: uppercase;
           margin-bottom: 11px;
           color: var(--text);
         }
@@ -533,10 +539,10 @@ export function Audience() {
           stroke-width: 3;
           fill: none;
         }
-        .aud-card.own   .chk-ic { stroke: var(--terra); }
-        .aud-card.fleet .chk-ic { stroke: var(--mustard); }
-        .aud-card.moto  .chk-ic { stroke: var(--terra-dark); }
-        .aud-card.bike  .chk-ic { stroke: var(--amber); }
+        .aud-card.own   .chk-ic { stroke: var(--navy); }
+        .aud-card.fleet .chk-ic { stroke: var(--yellow-closed); }
+        .aud-card.moto  .chk-ic { stroke: var(--red-dark); }
+        .aud-card.bike  .chk-ic { stroke: var(--yellow-closed); }
 
         @media (max-width: 820px) { .aud-grid { grid-template-columns: 1fr; } }
         @media (max-width: 680px) { .aud-card { padding: 30px 24px; } }
@@ -571,7 +577,7 @@ export function CTABanner() {
       <style>{`
         .cta-banner { padding: 90px 0; }
         .cta-inner {
-          background: linear-gradient(135deg, var(--terra), var(--mustard));
+          background: linear-gradient(135deg, var(--red), var(--red-vivid));
           border-radius: 30px;
           padding: 64px 56px;
           text-align: center;
@@ -590,12 +596,13 @@ export function CTABanner() {
           position: absolute;
           bottom: -50%; right: -5%;
           width: 340px; height: 340px;
-          background: radial-gradient(circle, rgba(168,69,28,0.3), transparent 70%);
+          background: radial-gradient(circle, rgba(255,226,33,0.28), transparent 70%);
         }
         .cta-inner h2 {
-          font-family: var(--font-fraunces), serif;
+          font-family: var(--font-barlow), sans-serif;
           font-size: clamp(30px, 4vw, 46px);
-          font-weight: 700;
+          font-weight: 800;
+          text-transform: uppercase;
           color: #fff;
           margin-bottom: 14px;
           position: relative;
@@ -612,11 +619,11 @@ export function CTABanner() {
           gap: 10px;
           padding: 15px 28px;
           border-radius: 50px;
-          font-family: var(--font-outfit), sans-serif;
+          font-family: var(--font-inter), sans-serif;
           font-weight: 600;
           font-size: 16px;
           background: #fff;
-          color: var(--terra-dark);
+          color: var(--red-dark);
           box-shadow: 0 12px 30px rgba(0,0,0,0.18);
           position: relative;
           transition: transform 0.25s, box-shadow 0.25s;

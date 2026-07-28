@@ -106,7 +106,7 @@ export default function Header() {
           border-bottom: 1px solid transparent;
         }
         .site-header.scrolled {
-          background: rgba(251, 248, 242, 0.85);
+          background: rgba(255, 255, 255, 0.88);
           backdrop-filter: blur(16px);
           -webkit-backdrop-filter: blur(16px);
           box-shadow: 0 6px 30px var(--shadow);
@@ -140,7 +140,7 @@ export default function Header() {
         .nav-links li a {
           display: block;
           color: var(--mute);
-          font-family: var(--font-outfit), sans-serif;
+          font-family: var(--font-inter), sans-serif;
           font-weight: 500;
           font-size: 15px;
           letter-spacing: 0.2px;
@@ -151,12 +151,12 @@ export default function Header() {
         }
         .nav-links li a:hover {
           color: var(--text);
-          background: rgba(214, 154, 30, 0.07);
+          background: rgba(0, 40, 100, 0.06);
         }
         .nav-links li a.active {
-          color: var(--terra);
+          color: var(--navy);
           font-weight: 700;
-          background: rgba(214, 154, 30, 0.09);
+          background: rgba(0, 40, 100, 0.08);
         }
         .nav-links li a.active::after {
           content: '';
@@ -166,26 +166,26 @@ export default function Header() {
           transform: translateX(-50%);
           width: 16px;
           height: 2px;
-          background: var(--terra);
+          background: var(--navy);
           border-radius: 2px;
         }
 
         /* CTA — gradiente + pill */
         .nav-cta {
-          background: linear-gradient(135deg, var(--terra), var(--mustard)) !important;
+          background: linear-gradient(135deg, var(--red), var(--red-vivid)) !important;
           color: #fff !important;
           padding: 10px 22px !important;
           border-radius: 50px !important;
           font-weight: 600 !important;
           white-space: nowrap;
-          box-shadow: 0 8px 22px rgba(214, 154, 30, 0.3);
+          box-shadow: 0 8px 22px var(--red-glow);
           transition: transform 0.25s, box-shadow 0.25s !important;
           letter-spacing: 0.1px;
         }
         .nav-cta:hover {
           transform: translateY(-2px) !important;
-          box-shadow: 0 12px 30px rgba(214, 154, 30, 0.42) !important;
-          background: linear-gradient(135deg, var(--terra), var(--mustard)) !important;
+          box-shadow: 0 12px 30px var(--red-glow) !important;
+          background: linear-gradient(135deg, var(--red), var(--red-vivid)) !important;
         }
 
         /* Hamburger */
@@ -198,7 +198,7 @@ export default function Header() {
           width: 42px;
           height: 42px;
           background: none;
-          border: 1.5px solid rgba(42, 32, 24, 0.18);
+          border: 1.5px solid rgba(18, 32, 58, 0.16);
           border-radius: 8px;
           cursor: pointer;
           padding: 0;
@@ -229,7 +229,7 @@ export default function Header() {
             padding: 12px;
             border-radius: 14px;
             border: 1px solid var(--line);
-            box-shadow: 0 8px 30px rgba(42, 32, 24, 0.10);
+            box-shadow: 0 8px 30px rgba(0, 40, 100, 0.10);
           }
           .nav-links.open { display: flex; }
           .nav-links li { width: 100%; }
