@@ -130,7 +130,7 @@ export const publicos = [
   {
     tipo: "bike",
     titulo: "Ciclistas",
-    desc: "Para bicicletas convencionais e elétricas. Proteção discreta e monitoramento via app.",
+    desc: "Para bicicletas elétricas (e-bikes). Proteção discreta e monitoramento via app.",
     itens: [
       "Rastreamento discreto",
       "Alerta de saída da cerca virtual",
